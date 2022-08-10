@@ -6,17 +6,15 @@
 //
 // Lab 5 : Thiet ke he thong den giao thong
 // Thuc hien giao tiep DE2 - GPIO - Breadboard - ICs/LEDs/LCDs
-// Manual FSM
+// Auto FSM
 //
 ///////////////////////////////////////////////
 
-module mfsm #(
+module afsm #(
     parameter NULL = 0;
 ) (
     input clk,
     input rst,
-
-    input chrtsw,
 
     output rled0, gled0, yled0, // red green yellow 0 
     output [3:0] hex0n, //hex 0
@@ -34,7 +32,7 @@ parameter CHR2 = 2'b10;
 
 ///////////////////////////////////////////////
 //main fsm//
-
+wire chr1half, chr2half;
 wire chr1done, chr2done;
 
 reg [1:0] state;
@@ -57,14 +55,14 @@ assign stateischr2 = state == CHR2;
 
 always_ff @(posedge clk) begin
     if(rst)
-    state <= chrtsw? WAY1 : WAY2;
+    state <= WAY1;
     else
         if(stateisway1)
-        state <= chrtsw? WAY1 : CHR1;
+        state <= chr1half? WAY1 : CHR1;
         else if(stateischr1)
         state <= chr1done? WAY2 : CHR1;       
         else if(stateisway2)
-        state <= (!chrtsw)? CHR2 : WAY2; 
+        state <= chr2half? CHR2 : WAY2;
         else if(stateisch2)
         state <= chr2done? WAY1 : CHR2;
         else
@@ -74,17 +72,22 @@ end
 ////////////////////////////////////////////////
 wire [3:0] hex0n,hex1n; //for number to count
 //3-sec down cnt
-reg [1:0] cntdwn;//count down timer
+reg [3:0] cntdwn;//count down timer
 
-always_ff @(posedge clk ) begin
+always_ff @(posedge clk) begin
     if(rst)
-    cntdwn <= 2'd3;
+    cntdwn <= 9;
     else
-    cntdwn <= (stateischr1 | stateischr2)? cntdwn-1 : 3;
+    if(chr1done|chr2done)
+    cntdwn <= 9;
+    else
+    cntdwn <= cntdwn - 1;
 end
 
-assign chr1done = cntdwn == 2'b0;
+assign chr1done = cntdwn == 0;
 assign chr2done = chr1done;
+assign chr1half = cntdwn == 4;
+assign chr2half = chr1half;
 
 ////////////////////////////////////////////////
 //output logic
@@ -93,13 +96,13 @@ assign chr2done = chr1done;
 assign gled0 = stateisway1; //green lit when way1 is going
 assign rled0 = stateisway2 | stateischr2; //red lit when way2 is going or changing to way 1
 assign yled0 = stateischr1; //yellow lit when changing to way 2
-assign hex0n = stateisway1? 4'd9 : cntdwn; // number 9 or 3 sec down
+assign hex0n = stateisway1? cntdwn - 4 : cntdwn;
 
 //way 2
 assign gled1 = stateisway2; //green lit when way2 is going
 assign rled1 = stateisway1 | stateischr1; //red lit when way2 is going or changing to way 1
 assign yled1 = stateischr2; //yellow lit when changing to way 2
-assign hex1n = stateisway2? 4'd9 : cntdwn; // number 9 or 3 sec down
+assign hex1n = stateisway2? cntdwn - 4 : cntdwn; // number 9 or 3 sec down
 
 
 ////////////////////////////////////////////////
