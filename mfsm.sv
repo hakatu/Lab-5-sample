@@ -10,9 +10,7 @@
 //
 ///////////////////////////////////////////////
 
-module mfsm #(
-    parameter NULL = 0;
-) (
+module mfsm (
     input clk,
     input rst,
     input sec,
@@ -66,14 +64,13 @@ always_ff @(posedge clk) begin
         state <= chr1done? WAY2 : CHR1;       
         else if(stateisway2)
         state <= (!chrtsw)? CHR2 : WAY2; 
-        else if(stateisch2)
+        else if(stateischr2)
         state <= chr2done? WAY1 : CHR2;
         else
         state <= state; 
 end
 
 ////////////////////////////////////////////////
-wire [3:0] hex0n,hex1n; //for number to count
 //3-sec down cnt
 reg [1:0] cntdwn;//count down timer
 

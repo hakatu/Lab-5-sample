@@ -76,8 +76,7 @@ wire [3:0] hex0na,hex1na;
 afsm iafsm (
     clk,
     rst,
-	sec,
-	
+
     rled0a, gled0a, yled0a, // red green yellow 0 
     hex0na, //hex 0
 

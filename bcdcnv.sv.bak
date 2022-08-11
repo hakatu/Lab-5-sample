@@ -10,7 +10,9 @@
 //
 ///////////////////////////////////////////////
 
-module bcdcnv(
+module bcdcnv #(
+    parameter NULL = 0;
+) (
     input [3:0] nmber,
     output [6:0] svnseg
 );
