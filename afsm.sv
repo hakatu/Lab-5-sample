@@ -15,6 +15,7 @@ module afsm #(
 ) (
     input clk,
     input rst,
+    input sec,
 
     output rled0, gled0, yled0, // red green yellow 0 
     output [3:0] hex0n, //hex 0
@@ -80,7 +81,7 @@ always_ff @(posedge clk) begin
     else
     if(chr1done|chr2done)
     cntdwn <= 9;
-    else
+    else if(sec)
     cntdwn <= cntdwn - 1;
 end
 

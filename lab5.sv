@@ -72,5 +72,47 @@ assign hex1 = masw? hex1a : hex1m;
 
 ////////////////////////////////////////
 
+wire sec;
+wire [3:0] hex0na,hex1na;
+
+afsm iafsm (
+    clk,
+    rst,
+
+    rled0a, gled0a, yled0a, // red green yellow 0 
+    hex0na, //hex 0
+
+    rled1a, gled1a, yled1a, // red green yellow 1
+    hex1na //double hex 1
+);
+
+/////
+
+wire [3:0] hex0nm,hex1nm;
+
+mfsm imfsm (
+    clk,
+    rst,
+    sec,
+    chrtsw,//change switch
+
+    rled0m, gled0m, yled0m, // red green yellow 0 
+    hex0nm, //hex 0
+
+    rled1m, gled1m, yled1m, // red green yellow 1
+    hex1nm //double hex 1
+);
+
+//// bcd convert to 7 segs
+
+bcdcnv ibcdcnv1 (hex0na,hex0a);
+bcdcnv ibcdcnv2 (hex1na,hex1a);
+bcdcnv ibcdcnv1 (hex0nm,hex0m);
+bcdcnv ibcdcnv2 (hex1nm,hex1m);
+
+//// second generator
+
+secgen isecgen (clk,rst,sec);
+
 ///////////////////////////////////////////////
 endmodule

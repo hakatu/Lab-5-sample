@@ -15,6 +15,7 @@ module mfsm #(
 ) (
     input clk,
     input rst,
+    input sec,
 
     input chrtsw,
 
@@ -76,10 +77,10 @@ wire [3:0] hex0n,hex1n; //for number to count
 //3-sec down cnt
 reg [1:0] cntdwn;//count down timer
 
-always_ff @(posedge clk ) begin
+always_ff @(posedge clk) begin
     if(rst)
     cntdwn <= 2'd3;
-    else
+    else if(sec)
     cntdwn <= (stateischr1 | stateischr2)? cntdwn-1 : 3;
 end
 
