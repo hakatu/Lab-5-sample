@@ -1,0 +1,14 @@
+
+State Machine - |lab5wr|lab5:ilab5|mfsm:imfsm|state
+Name state.CHR1 state.CHR2 state.WAY2 state.WAY1 
+state.WAY1 0 0 0 0 
+state.WAY2 0 0 1 1 
+state.CHR2 0 1 0 1 
+state.CHR1 1 0 0 1 
+
+State Machine - |lab5wr|lab5:ilab5|afsm:iafsm|state
+Name state.CHR1 state.CHR2 state.WAY2 state.WAY1 
+state.WAY1 0 0 0 0 
+state.WAY2 0 0 1 1 
+state.CHR2 0 1 0 1 
+state.CHR1 1 0 0 1 

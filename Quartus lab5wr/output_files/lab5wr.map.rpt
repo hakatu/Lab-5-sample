@@ -1,0 +1,604 @@
+Analysis & Synthesis report for lab5wr
+Fri Aug 12 02:23:18 2022
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |lab5wr|lab5:ilab5|mfsm:imfsm|state
+  9. State Machine - |lab5wr|lab5:ilab5|afsm:iafsm|state
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for User Entity Instance: lab5:ilab5|afsm:iafsm
+ 15. Parameter Settings for User Entity Instance: lab5:ilab5|mfsm:imfsm
+ 16. Parameter Settings for User Entity Instance: lab5:ilab5|secgen:isecgen
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri Aug 12 02:23:18 2022           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; lab5wr                                          ;
+; Top-level Entity Name              ; lab5wr                                          ;
+; Family                             ; Cyclone II                                      ;
+; Total logic elements               ; 275                                             ;
+;     Total combinational functions  ; 275                                             ;
+;     Dedicated logic registers      ; 114                                             ;
+; Total registers                    ; 114                                             ;
+; Total pins                         ; 37                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C35F672C6       ;                    ;
+; Top-level entity name                                                      ; lab5wr             ; lab5wr             ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 12     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                     ;
++----------------------------------+-----------------+------------------------------+------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path ; Library ;
++----------------------------------+-----------------+------------------------------+------------------------------+---------+
+; ../secgen.sv                     ; yes             ; User SystemVerilog HDL File  ; K:/Lab 5 sample/secgen.sv    ;         ;
+; ../mfsm.sv                       ; yes             ; User SystemVerilog HDL File  ; K:/Lab 5 sample/mfsm.sv      ;         ;
+; ../lcddisp.sv                    ; yes             ; User SystemVerilog HDL File  ; K:/Lab 5 sample/lcddisp.sv   ;         ;
+; ../lab5wr.sv                     ; yes             ; User SystemVerilog HDL File  ; K:/Lab 5 sample/lab5wr.sv    ;         ;
+; ../lab5.sv                       ; yes             ; User SystemVerilog HDL File  ; K:/Lab 5 sample/lab5.sv      ;         ;
+; ../bcdcnv.sv                     ; yes             ; User SystemVerilog HDL File  ; K:/Lab 5 sample/bcdcnv.sv    ;         ;
+; ../afsm.sv                       ; yes             ; User SystemVerilog HDL File  ; K:/Lab 5 sample/afsm.sv      ;         ;
++----------------------------------+-----------------+------------------------------+------------------------------+---------+
+
+
++--------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary            ;
++---------------------------------------------+----------+
+; Resource                                    ; Usage    ;
++---------------------------------------------+----------+
+; Estimated Total logic elements              ; 275      ;
+;                                             ;          ;
+; Total combinational functions               ; 275      ;
+; Logic element usage by number of LUT inputs ;          ;
+;     -- 4 input functions                    ; 141      ;
+;     -- 3 input functions                    ; 27       ;
+;     -- <=2 input functions                  ; 107      ;
+;                                             ;          ;
+; Logic elements by mode                      ;          ;
+;     -- normal mode                          ; 188      ;
+;     -- arithmetic mode                      ; 87       ;
+;                                             ;          ;
+; Total registers                             ; 114      ;
+;     -- Dedicated logic registers            ; 114      ;
+;     -- I/O registers                        ; 0        ;
+;                                             ;          ;
+; I/O pins                                    ; 37       ;
+; Embedded Multiplier 9-bit elements          ; 0        ;
+; Maximum fan-out node                        ; CLOCK_50 ;
+; Maximum fan-out                             ; 114      ;
+; Total fan-out                               ; 1194     ;
+; Average fan-out                             ; 2.80     ;
++---------------------------------------------+----------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                 ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------+--------------+
+; |lab5wr                    ; 275 (1)           ; 114 (0)      ; 0           ; 0            ; 0       ; 0         ; 37   ; 0            ; |lab5wr                             ; work         ;
+;    |lab5:ilab5|            ; 274 (25)          ; 114 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab5wr|lab5:ilab5                  ; work         ;
+;       |afsm:iafsm|         ; 20 (20)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab5wr|lab5:ilab5|afsm:iafsm       ; work         ;
+;       |bcdcnv:ibcdcnv1|    ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab5wr|lab5:ilab5|bcdcnv:ibcdcnv1  ; work         ;
+;       |bcdcnv:ibcdcnv2|    ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab5wr|lab5:ilab5|bcdcnv:ibcdcnv2  ; work         ;
+;       |lcddisp:ilcddisp|   ; 167 (167)         ; 74 (74)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab5wr|lab5:ilab5|lcddisp:ilcddisp ; work         ;
+;       |mfsm:imfsm|         ; 13 (13)           ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab5wr|lab5:ilab5|mfsm:imfsm       ; work         ;
+;       |secgen:isecgen|     ; 35 (35)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab5wr|lab5:ilab5|secgen:isecgen   ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------+
+; State Machine - |lab5wr|lab5:ilab5|mfsm:imfsm|state            ;
++------------+------------+------------+------------+------------+
+; Name       ; state.CHR1 ; state.CHR2 ; state.WAY2 ; state.WAY1 ;
++------------+------------+------------+------------+------------+
+; state.WAY1 ; 0          ; 0          ; 0          ; 0          ;
+; state.WAY2 ; 0          ; 0          ; 1          ; 1          ;
+; state.CHR2 ; 0          ; 1          ; 0          ; 1          ;
+; state.CHR1 ; 1          ; 0          ; 0          ; 1          ;
++------------+------------+------------+------------+------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------+
+; State Machine - |lab5wr|lab5:ilab5|afsm:iafsm|state            ;
++------------+------------+------------+------------+------------+
+; Name       ; state.CHR1 ; state.CHR2 ; state.WAY2 ; state.WAY1 ;
++------------+------------+------------+------------+------------+
+; state.WAY1 ; 0          ; 0          ; 0          ; 0          ;
+; state.WAY2 ; 0          ; 0          ; 1          ; 1          ;
+; state.CHR2 ; 0          ; 1          ; 0          ; 1          ;
+; state.CHR1 ; 1          ; 0          ; 0          ; 1          ;
++------------+------------+------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                ;
++------------------------------------------+----------------------------------------+
+; Register name                            ; Reason for Removal                     ;
++------------------------------------------+----------------------------------------+
+; lab5:ilab5|lcddisp:ilcddisp|Datas[25][0] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[25][1] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[25][2] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[25][3] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[25][4] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[25][5] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[25][6] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[25][7] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[24][0] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[24][1] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[24][2] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[24][3] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[24][4] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[24][5] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[24][6] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[24][7] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[23][0] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[23][1] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[23][2] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[23][3] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[23][4] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[23][5] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[23][6] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[23][7] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[22][0] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[22][1] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[22][2] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[22][3] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[22][4] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[22][5] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[22][6] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[22][7] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[21][0] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[21][1] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[21][2] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[21][3] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[21][4] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[21][5] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[21][6] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[21][7] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[20][0] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[20][1] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[20][2] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[20][3] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[20][4] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[20][5] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[20][6] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[20][7] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[19][0] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[19][1] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[19][2] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[19][3] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[19][4] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[19][5] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[19][6] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[19][7] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[18][0] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[18][1] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[18][2] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[18][3] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[18][4] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[18][5] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[18][6] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[18][7] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[17][0] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[17][1] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[17][2] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[17][3] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[17][4] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[17][5] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[17][6] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[17][7] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[16][0] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[16][1] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[16][2] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[16][3] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[16][4] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[16][5] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[16][6] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[16][7] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[15][0] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[15][1] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[15][2] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[15][3] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[15][4] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[15][5] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[15][6] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[15][7] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[14][0] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[14][1] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[14][2] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[14][3] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[14][4] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[14][5] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[14][6] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[14][7] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[13][0] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[13][1] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[13][2] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[13][3] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[13][4] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[13][5] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[13][6] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[13][7] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[12][0] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[12][1] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[12][2] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[12][3] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[12][4] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[12][5] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[12][6] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[12][7] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[11][0] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[11][1] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[11][2] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[11][3] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[11][4] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[11][5] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[11][6] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[11][7] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[10][0] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[10][1] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[10][2] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[10][3] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[10][4] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[10][5] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[10][6] ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[10][7] ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[9][0]  ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[9][1]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[9][2]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[9][3]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[9][4]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[9][5]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[9][6]  ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[9][7]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[8][0]  ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[8][1]  ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[8][2]  ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[8][3]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[8][4]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[8][5]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[8][6]  ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[8][7]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[7][0]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[7][1]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[7][2]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[7][3]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[7][4]  ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[7][5]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[7][6]  ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[7][7]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[6][0]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[6][1]  ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[6][2]  ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[6][3]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[6][4]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[6][5]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[6][6]  ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[6][7]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[5][0]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[5][1]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[5][2]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[5][3]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[5][4]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[5][5]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[5][6]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[5][7]  ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[4][0]  ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[4][1]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[4][2]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[4][3]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[4][4]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[4][5]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[4][6]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[4][7]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[3][0]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[3][1]  ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[3][2]  ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[3][3]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[3][4]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[3][5]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[3][6]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[3][7]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[2][0]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[2][1]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[2][2]  ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[2][3]  ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[2][4]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[2][5]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[2][6]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[2][7]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[1][0]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[1][1]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[1][2]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[1][3]  ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[1][4]  ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[1][5]  ; Stuck at VCC due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[1][6]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|lcddisp:ilcddisp|Datas[1][7]  ; Stuck at GND due to stuck port data_in ;
+; lab5:ilab5|mfsm:imfsm|state~2            ; Lost fanout                            ;
+; lab5:ilab5|mfsm:imfsm|state~3            ; Lost fanout                            ;
+; lab5:ilab5|afsm:iafsm|state~2            ; Lost fanout                            ;
+; lab5:ilab5|afsm:iafsm|state~3            ; Lost fanout                            ;
+; Total Number of Removed Registers = 204  ;                                        ;
++------------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 114   ;
+; Number of registers using Synchronous Clear  ; 32    ;
+; Number of registers using Synchronous Load   ; 26    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 10    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; lab5:ilab5|lcddisp:ilcddisp|j[0]       ; 14      ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+; 3:1                ; 26 bits   ; 52 LEs        ; 26 LEs               ; 26 LEs                 ; Yes        ; |lab5wr|lab5:ilab5|secgen:isecgen|temp[18] ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |lab5wr|lab5:ilab5|lcddisp:ilcddisp|i[1]   ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |lab5wr|lab5:ilab5|mfsm:imfsm|cntdwn[1]    ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |lab5wr|lab5:ilab5|afsm:iafsm|cntdwn[2]    ;
+; 5:1                ; 31 bits   ; 93 LEs        ; 31 LEs               ; 62 LEs                 ; Yes        ; |lab5wr|lab5:ilab5|lcddisp:ilcddisp|j[16]  ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; No         ; |lab5wr|lab5:ilab5|lcddisp:ilcddisp|j      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lab5:ilab5|afsm:iafsm ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; WAY1           ; 00    ; Unsigned Binary                           ;
+; WAY2           ; 01    ; Unsigned Binary                           ;
+; CHR1           ; 11    ; Unsigned Binary                           ;
+; CHR2           ; 10    ; Unsigned Binary                           ;
++----------------+-------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lab5:ilab5|mfsm:imfsm ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; WAY1           ; 00    ; Unsigned Binary                           ;
+; WAY2           ; 01    ; Unsigned Binary                           ;
+; CHR1           ; 11    ; Unsigned Binary                           ;
+; CHR2           ; 10    ; Unsigned Binary                           ;
++----------------+-------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lab5:ilab5|secgen:isecgen ;
++----------------+----------+--------------------------------------------+
+; Parameter Name ; Value    ; Type                                       ;
++----------------+----------+--------------------------------------------+
+; CLKCONST       ; 50000000 ; Signed Integer                             ;
++----------------+----------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Fri Aug 12 02:23:13 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab5wr -c lab5wr
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file /lab 5 sample/secgen.sv
+    Info (12023): Found entity 1: secgen
+Info (12021): Found 1 design units, including 1 entities, in source file /lab 5 sample/mfsm.sv
+    Info (12023): Found entity 1: mfsm
+Info (12021): Found 1 design units, including 1 entities, in source file /lab 5 sample/lcddisp.sv
+    Info (12023): Found entity 1: lcddisp
+Info (12021): Found 1 design units, including 1 entities, in source file /lab 5 sample/lab5wr.sv
+    Info (12023): Found entity 1: lab5wr
+Info (12021): Found 1 design units, including 1 entities, in source file /lab 5 sample/lab5.sv
+    Info (12023): Found entity 1: lab5
+Info (12021): Found 1 design units, including 1 entities, in source file /lab 5 sample/bcdcnv.sv
+    Info (12023): Found entity 1: bcdcnv
+Info (12021): Found 1 design units, including 1 entities, in source file /lab 5 sample/afsm.sv
+    Info (12023): Found entity 1: afsm
+Info (12127): Elaborating entity "lab5wr" for the top level hierarchy
+Info (12128): Elaborating entity "lab5" for hierarchy "lab5:ilab5"
+Info (12128): Elaborating entity "lcddisp" for hierarchy "lab5:ilab5|lcddisp:ilcddisp"
+Info (12128): Elaborating entity "afsm" for hierarchy "lab5:ilab5|afsm:iafsm"
+Warning (10230): Verilog HDL assignment warning at afsm.sv(82): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at afsm.sv(97): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at afsm.sv(103): truncated value with size 32 to match size of target (4)
+Info (12128): Elaborating entity "mfsm" for hierarchy "lab5:ilab5|mfsm:imfsm"
+Warning (10230): Verilog HDL assignment warning at mfsm.sv(81): truncated value with size 32 to match size of target (2)
+Info (12128): Elaborating entity "bcdcnv" for hierarchy "lab5:ilab5|bcdcnv:ibcdcnv1"
+Info (12128): Elaborating entity "secgen" for hierarchy "lab5:ilab5|secgen:isecgen"
+Warning (10230): Verilog HDL assignment warning at secgen.sv(32): truncated value with size 32 to match size of target (26)
+Warning (10230): Verilog HDL assignment warning at secgen.sv(34): truncated value with size 32 to match size of target (26)
+Warning (10230): Verilog HDL assignment warning at secgen.sv(36): truncated value with size 32 to match size of target (26)
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LCD_RW" is stuck at GND
+    Warning (13410): Pin "LCD_ON" is stuck at VCC
+    Warning (13410): Pin "LCD_BLON" is stuck at VCC
+Info (17049): 4 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 313 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 33 output pins
+    Info (21061): Implemented 276 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 12 warnings
+    Info: Peak virtual memory: 4613 megabytes
+    Info: Processing ended: Fri Aug 12 02:23:18 2022
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:03
+
+

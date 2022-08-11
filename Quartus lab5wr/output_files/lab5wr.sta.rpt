@@ -1,0 +1,1443 @@
+TimeQuest Timing Analyzer report for lab5wr
+Fri Aug 12 02:23:33 2022
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'CLOCK_50'
+ 12. Slow Model Hold: 'CLOCK_50'
+ 13. Slow Model Minimum Pulse Width: 'CLOCK_50'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Propagation Delay
+ 19. Minimum Propagation Delay
+ 20. Fast Model Setup Summary
+ 21. Fast Model Hold Summary
+ 22. Fast Model Recovery Summary
+ 23. Fast Model Removal Summary
+ 24. Fast Model Minimum Pulse Width Summary
+ 25. Fast Model Setup: 'CLOCK_50'
+ 26. Fast Model Hold: 'CLOCK_50'
+ 27. Fast Model Minimum Pulse Width: 'CLOCK_50'
+ 28. Setup Times
+ 29. Hold Times
+ 30. Clock to Output Times
+ 31. Minimum Clock to Output Times
+ 32. Propagation Delay
+ 33. Minimum Propagation Delay
+ 34. Multicorner Timing Analysis Summary
+ 35. Setup Times
+ 36. Hold Times
+ 37. Clock to Output Times
+ 38. Minimum Clock to Output Times
+ 39. Progagation Delay
+ 40. Minimum Progagation Delay
+ 41. Setup Transfers
+ 42. Hold Transfers
+ 43. Report TCCS
+ 44. Report RSKM
+ 45. Unconstrained Paths
+ 46. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; lab5wr                                                            ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C35F672C6                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 12     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                               ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets      ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+; CLOCK_50   ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLOCK_50 } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+
+
++--------------------------------------------------+
+; Slow Model Fmax Summary                          ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 106.69 MHz ; 106.69 MHz      ; CLOCK_50   ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-----------------------------------+
+; Slow Model Setup Summary          ;
++----------+--------+---------------+
+; Clock    ; Slack  ; End Point TNS ;
++----------+--------+---------------+
+; CLOCK_50 ; -8.373 ; -519.674      ;
++----------+--------+---------------+
+
+
++----------------------------------+
+; Slow Model Hold Summary          ;
++----------+-------+---------------+
+; Clock    ; Slack ; End Point TNS ;
++----------+-------+---------------+
+; CLOCK_50 ; 0.391 ; 0.000         ;
++----------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++----------+--------+--------------------+
+; Clock    ; Slack  ; End Point TNS      ;
++----------+--------+--------------------+
+; CLOCK_50 ; -1.380 ; -115.380           ;
++----------+--------+--------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'CLOCK_50'                                                                                                                         ;
++--------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                         ; To Node                           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+; -8.373 ; lab5:ilab5|lcddisp:ilcddisp|i[11] ; lab5:ilab5|lcddisp:ilcddisp|j[6]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 9.403      ;
+; -8.373 ; lab5:ilab5|lcddisp:ilcddisp|i[11] ; lab5:ilab5|lcddisp:ilcddisp|j[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 9.403      ;
+; -8.372 ; lab5:ilab5|lcddisp:ilcddisp|i[11] ; lab5:ilab5|lcddisp:ilcddisp|j[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 9.402      ;
+; -8.371 ; lab5:ilab5|lcddisp:ilcddisp|i[11] ; lab5:ilab5|lcddisp:ilcddisp|j[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 9.401      ;
+; -8.369 ; lab5:ilab5|lcddisp:ilcddisp|i[5]  ; lab5:ilab5|lcddisp:ilcddisp|j[6]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 9.399      ;
+; -8.369 ; lab5:ilab5|lcddisp:ilcddisp|i[5]  ; lab5:ilab5|lcddisp:ilcddisp|j[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 9.399      ;
+; -8.368 ; lab5:ilab5|lcddisp:ilcddisp|i[11] ; lab5:ilab5|lcddisp:ilcddisp|j[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 9.398      ;
+; -8.368 ; lab5:ilab5|lcddisp:ilcddisp|i[11] ; lab5:ilab5|lcddisp:ilcddisp|j[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 9.398      ;
+; -8.368 ; lab5:ilab5|lcddisp:ilcddisp|i[5]  ; lab5:ilab5|lcddisp:ilcddisp|j[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 9.398      ;
+; -8.367 ; lab5:ilab5|lcddisp:ilcddisp|i[11] ; lab5:ilab5|lcddisp:ilcddisp|j[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 9.397      ;
+; -8.367 ; lab5:ilab5|lcddisp:ilcddisp|i[5]  ; lab5:ilab5|lcddisp:ilcddisp|j[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 9.397      ;
+; -8.364 ; lab5:ilab5|lcddisp:ilcddisp|i[5]  ; lab5:ilab5|lcddisp:ilcddisp|j[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 9.394      ;
+; -8.364 ; lab5:ilab5|lcddisp:ilcddisp|i[5]  ; lab5:ilab5|lcddisp:ilcddisp|j[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 9.394      ;
+; -8.363 ; lab5:ilab5|lcddisp:ilcddisp|i[5]  ; lab5:ilab5|lcddisp:ilcddisp|j[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 9.393      ;
+; -8.333 ; lab5:ilab5|lcddisp:ilcddisp|i[0]  ; lab5:ilab5|lcddisp:ilcddisp|j[6]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 9.364      ;
+; -8.333 ; lab5:ilab5|lcddisp:ilcddisp|i[0]  ; lab5:ilab5|lcddisp:ilcddisp|j[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 9.364      ;
+; -8.332 ; lab5:ilab5|lcddisp:ilcddisp|i[0]  ; lab5:ilab5|lcddisp:ilcddisp|j[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 9.363      ;
+; -8.331 ; lab5:ilab5|lcddisp:ilcddisp|i[0]  ; lab5:ilab5|lcddisp:ilcddisp|j[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 9.362      ;
+; -8.328 ; lab5:ilab5|lcddisp:ilcddisp|i[0]  ; lab5:ilab5|lcddisp:ilcddisp|j[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 9.359      ;
+; -8.328 ; lab5:ilab5|lcddisp:ilcddisp|i[0]  ; lab5:ilab5|lcddisp:ilcddisp|j[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 9.359      ;
+; -8.327 ; lab5:ilab5|lcddisp:ilcddisp|i[0]  ; lab5:ilab5|lcddisp:ilcddisp|j[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 9.358      ;
+; -8.297 ; lab5:ilab5|lcddisp:ilcddisp|i[1]  ; lab5:ilab5|lcddisp:ilcddisp|j[6]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 9.328      ;
+; -8.297 ; lab5:ilab5|lcddisp:ilcddisp|i[1]  ; lab5:ilab5|lcddisp:ilcddisp|j[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 9.328      ;
+; -8.296 ; lab5:ilab5|lcddisp:ilcddisp|i[1]  ; lab5:ilab5|lcddisp:ilcddisp|j[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 9.327      ;
+; -8.295 ; lab5:ilab5|lcddisp:ilcddisp|i[1]  ; lab5:ilab5|lcddisp:ilcddisp|j[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 9.326      ;
+; -8.292 ; lab5:ilab5|lcddisp:ilcddisp|i[1]  ; lab5:ilab5|lcddisp:ilcddisp|j[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 9.323      ;
+; -8.292 ; lab5:ilab5|lcddisp:ilcddisp|i[1]  ; lab5:ilab5|lcddisp:ilcddisp|j[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 9.323      ;
+; -8.291 ; lab5:ilab5|lcddisp:ilcddisp|i[1]  ; lab5:ilab5|lcddisp:ilcddisp|j[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 9.322      ;
+; -8.284 ; lab5:ilab5|lcddisp:ilcddisp|i[6]  ; lab5:ilab5|lcddisp:ilcddisp|j[6]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 9.314      ;
+; -8.284 ; lab5:ilab5|lcddisp:ilcddisp|i[6]  ; lab5:ilab5|lcddisp:ilcddisp|j[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 9.314      ;
+; -8.283 ; lab5:ilab5|lcddisp:ilcddisp|i[6]  ; lab5:ilab5|lcddisp:ilcddisp|j[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 9.313      ;
+; -8.282 ; lab5:ilab5|lcddisp:ilcddisp|i[6]  ; lab5:ilab5|lcddisp:ilcddisp|j[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 9.312      ;
+; -8.279 ; lab5:ilab5|lcddisp:ilcddisp|i[6]  ; lab5:ilab5|lcddisp:ilcddisp|j[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 9.309      ;
+; -8.279 ; lab5:ilab5|lcddisp:ilcddisp|i[6]  ; lab5:ilab5|lcddisp:ilcddisp|j[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 9.309      ;
+; -8.278 ; lab5:ilab5|lcddisp:ilcddisp|i[6]  ; lab5:ilab5|lcddisp:ilcddisp|j[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 9.308      ;
+; -8.267 ; lab5:ilab5|lcddisp:ilcddisp|i[31] ; lab5:ilab5|lcddisp:ilcddisp|j[6]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 9.293      ;
+; -8.267 ; lab5:ilab5|lcddisp:ilcddisp|i[31] ; lab5:ilab5|lcddisp:ilcddisp|j[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 9.293      ;
+; -8.266 ; lab5:ilab5|lcddisp:ilcddisp|i[31] ; lab5:ilab5|lcddisp:ilcddisp|j[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 9.292      ;
+; -8.265 ; lab5:ilab5|lcddisp:ilcddisp|i[31] ; lab5:ilab5|lcddisp:ilcddisp|j[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 9.291      ;
+; -8.263 ; lab5:ilab5|lcddisp:ilcddisp|i[11] ; lab5:ilab5|lcddisp:ilcddisp|j[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 9.294      ;
+; -8.262 ; lab5:ilab5|lcddisp:ilcddisp|i[31] ; lab5:ilab5|lcddisp:ilcddisp|j[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 9.288      ;
+; -8.262 ; lab5:ilab5|lcddisp:ilcddisp|i[31] ; lab5:ilab5|lcddisp:ilcddisp|j[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 9.288      ;
+; -8.261 ; lab5:ilab5|lcddisp:ilcddisp|i[31] ; lab5:ilab5|lcddisp:ilcddisp|j[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 9.287      ;
+; -8.260 ; lab5:ilab5|lcddisp:ilcddisp|i[11] ; lab5:ilab5|lcddisp:ilcddisp|j[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 9.291      ;
+; -8.259 ; lab5:ilab5|lcddisp:ilcddisp|i[11] ; lab5:ilab5|lcddisp:ilcddisp|j[18] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 9.290      ;
+; -8.259 ; lab5:ilab5|lcddisp:ilcddisp|i[13] ; lab5:ilab5|lcddisp:ilcddisp|j[6]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 9.290      ;
+; -8.259 ; lab5:ilab5|lcddisp:ilcddisp|i[13] ; lab5:ilab5|lcddisp:ilcddisp|j[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 9.290      ;
+; -8.259 ; lab5:ilab5|lcddisp:ilcddisp|i[5]  ; lab5:ilab5|lcddisp:ilcddisp|j[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 9.290      ;
+; -8.258 ; lab5:ilab5|lcddisp:ilcddisp|i[13] ; lab5:ilab5|lcddisp:ilcddisp|j[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 9.289      ;
+; -8.257 ; lab5:ilab5|lcddisp:ilcddisp|i[13] ; lab5:ilab5|lcddisp:ilcddisp|j[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 9.288      ;
+; -8.256 ; lab5:ilab5|lcddisp:ilcddisp|i[5]  ; lab5:ilab5|lcddisp:ilcddisp|j[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 9.287      ;
+; -8.255 ; lab5:ilab5|lcddisp:ilcddisp|i[5]  ; lab5:ilab5|lcddisp:ilcddisp|j[18] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 9.286      ;
+; -8.254 ; lab5:ilab5|lcddisp:ilcddisp|i[13] ; lab5:ilab5|lcddisp:ilcddisp|j[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 9.285      ;
+; -8.254 ; lab5:ilab5|lcddisp:ilcddisp|i[13] ; lab5:ilab5|lcddisp:ilcddisp|j[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 9.285      ;
+; -8.253 ; lab5:ilab5|lcddisp:ilcddisp|i[13] ; lab5:ilab5|lcddisp:ilcddisp|j[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 9.284      ;
+; -8.244 ; lab5:ilab5|lcddisp:ilcddisp|i[4]  ; lab5:ilab5|lcddisp:ilcddisp|j[6]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 9.274      ;
+; -8.244 ; lab5:ilab5|lcddisp:ilcddisp|i[4]  ; lab5:ilab5|lcddisp:ilcddisp|j[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 9.274      ;
+; -8.243 ; lab5:ilab5|lcddisp:ilcddisp|i[4]  ; lab5:ilab5|lcddisp:ilcddisp|j[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 9.273      ;
+; -8.242 ; lab5:ilab5|lcddisp:ilcddisp|i[4]  ; lab5:ilab5|lcddisp:ilcddisp|j[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 9.272      ;
+; -8.239 ; lab5:ilab5|lcddisp:ilcddisp|i[4]  ; lab5:ilab5|lcddisp:ilcddisp|j[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 9.269      ;
+; -8.239 ; lab5:ilab5|lcddisp:ilcddisp|i[4]  ; lab5:ilab5|lcddisp:ilcddisp|j[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 9.269      ;
+; -8.238 ; lab5:ilab5|lcddisp:ilcddisp|i[4]  ; lab5:ilab5|lcddisp:ilcddisp|j[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 9.268      ;
+; -8.237 ; lab5:ilab5|lcddisp:ilcddisp|i[11] ; lab5:ilab5|lcddisp:ilcddisp|j[20] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 9.268      ;
+; -8.237 ; lab5:ilab5|lcddisp:ilcddisp|i[21] ; lab5:ilab5|lcddisp:ilcddisp|j[6]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 9.263      ;
+; -8.237 ; lab5:ilab5|lcddisp:ilcddisp|i[21] ; lab5:ilab5|lcddisp:ilcddisp|j[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 9.263      ;
+; -8.236 ; lab5:ilab5|lcddisp:ilcddisp|i[21] ; lab5:ilab5|lcddisp:ilcddisp|j[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 9.262      ;
+; -8.235 ; lab5:ilab5|lcddisp:ilcddisp|i[11] ; lab5:ilab5|lcddisp:ilcddisp|j[4]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 9.266      ;
+; -8.235 ; lab5:ilab5|lcddisp:ilcddisp|i[11] ; lab5:ilab5|lcddisp:ilcddisp|j[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 9.266      ;
+; -8.235 ; lab5:ilab5|lcddisp:ilcddisp|i[11] ; lab5:ilab5|lcddisp:ilcddisp|j[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 9.266      ;
+; -8.235 ; lab5:ilab5|lcddisp:ilcddisp|i[21] ; lab5:ilab5|lcddisp:ilcddisp|j[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 9.261      ;
+; -8.234 ; lab5:ilab5|lcddisp:ilcddisp|i[11] ; lab5:ilab5|lcddisp:ilcddisp|j[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 9.265      ;
+; -8.234 ; lab5:ilab5|lcddisp:ilcddisp|i[11] ; lab5:ilab5|lcddisp:ilcddisp|j[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 9.265      ;
+; -8.234 ; lab5:ilab5|lcddisp:ilcddisp|i[11] ; lab5:ilab5|lcddisp:ilcddisp|j[19] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 9.265      ;
+; -8.233 ; lab5:ilab5|lcddisp:ilcddisp|i[14] ; lab5:ilab5|lcddisp:ilcddisp|j[6]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 9.263      ;
+; -8.233 ; lab5:ilab5|lcddisp:ilcddisp|i[14] ; lab5:ilab5|lcddisp:ilcddisp|j[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 9.263      ;
+; -8.233 ; lab5:ilab5|lcddisp:ilcddisp|i[5]  ; lab5:ilab5|lcddisp:ilcddisp|j[20] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 9.264      ;
+; -8.232 ; lab5:ilab5|lcddisp:ilcddisp|i[11] ; lab5:ilab5|lcddisp:ilcddisp|j[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 9.263      ;
+; -8.232 ; lab5:ilab5|lcddisp:ilcddisp|i[14] ; lab5:ilab5|lcddisp:ilcddisp|j[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 9.262      ;
+; -8.232 ; lab5:ilab5|lcddisp:ilcddisp|i[21] ; lab5:ilab5|lcddisp:ilcddisp|j[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 9.258      ;
+; -8.232 ; lab5:ilab5|lcddisp:ilcddisp|i[21] ; lab5:ilab5|lcddisp:ilcddisp|j[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 9.258      ;
+; -8.231 ; lab5:ilab5|lcddisp:ilcddisp|i[14] ; lab5:ilab5|lcddisp:ilcddisp|j[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 9.261      ;
+; -8.231 ; lab5:ilab5|lcddisp:ilcddisp|i[21] ; lab5:ilab5|lcddisp:ilcddisp|j[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 9.257      ;
+; -8.231 ; lab5:ilab5|lcddisp:ilcddisp|i[5]  ; lab5:ilab5|lcddisp:ilcddisp|j[4]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 9.262      ;
+; -8.231 ; lab5:ilab5|lcddisp:ilcddisp|i[5]  ; lab5:ilab5|lcddisp:ilcddisp|j[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 9.262      ;
+; -8.231 ; lab5:ilab5|lcddisp:ilcddisp|i[5]  ; lab5:ilab5|lcddisp:ilcddisp|j[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 9.262      ;
+; -8.230 ; lab5:ilab5|lcddisp:ilcddisp|i[5]  ; lab5:ilab5|lcddisp:ilcddisp|j[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 9.261      ;
+; -8.230 ; lab5:ilab5|lcddisp:ilcddisp|i[5]  ; lab5:ilab5|lcddisp:ilcddisp|j[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 9.261      ;
+; -8.230 ; lab5:ilab5|lcddisp:ilcddisp|i[5]  ; lab5:ilab5|lcddisp:ilcddisp|j[19] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 9.261      ;
+; -8.228 ; lab5:ilab5|lcddisp:ilcddisp|i[14] ; lab5:ilab5|lcddisp:ilcddisp|j[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 9.258      ;
+; -8.228 ; lab5:ilab5|lcddisp:ilcddisp|i[14] ; lab5:ilab5|lcddisp:ilcddisp|j[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 9.258      ;
+; -8.228 ; lab5:ilab5|lcddisp:ilcddisp|i[5]  ; lab5:ilab5|lcddisp:ilcddisp|j[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 9.259      ;
+; -8.227 ; lab5:ilab5|lcddisp:ilcddisp|i[14] ; lab5:ilab5|lcddisp:ilcddisp|j[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 9.257      ;
+; -8.223 ; lab5:ilab5|lcddisp:ilcddisp|i[0]  ; lab5:ilab5|lcddisp:ilcddisp|j[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 9.255      ;
+; -8.220 ; lab5:ilab5|lcddisp:ilcddisp|i[0]  ; lab5:ilab5|lcddisp:ilcddisp|j[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 9.252      ;
+; -8.219 ; lab5:ilab5|lcddisp:ilcddisp|i[0]  ; lab5:ilab5|lcddisp:ilcddisp|j[18] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 9.251      ;
+; -8.200 ; lab5:ilab5|lcddisp:ilcddisp|i[22] ; lab5:ilab5|lcddisp:ilcddisp|j[6]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 9.226      ;
+; -8.200 ; lab5:ilab5|lcddisp:ilcddisp|i[22] ; lab5:ilab5|lcddisp:ilcddisp|j[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 9.226      ;
+; -8.199 ; lab5:ilab5|lcddisp:ilcddisp|i[2]  ; lab5:ilab5|lcddisp:ilcddisp|j[6]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 9.230      ;
+; -8.199 ; lab5:ilab5|lcddisp:ilcddisp|i[2]  ; lab5:ilab5|lcddisp:ilcddisp|j[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 9.230      ;
+; -8.199 ; lab5:ilab5|lcddisp:ilcddisp|i[22] ; lab5:ilab5|lcddisp:ilcddisp|j[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 9.225      ;
++--------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'CLOCK_50'                                                                                                                            ;
++-------+------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                          ; To Node                             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.391 ; lab5:ilab5|lcddisp:ilcddisp|lcd_e  ; lab5:ilab5|lcddisp:ilcddisp|lcd_e   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; lab5:ilab5|mfsm:imfsm|state.WAY1   ; lab5:ilab5|mfsm:imfsm|state.WAY1    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; lab5:ilab5|mfsm:imfsm|cntdwn[0]    ; lab5:ilab5|mfsm:imfsm|cntdwn[0]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; lab5:ilab5|afsm:iafsm|cntdwn[1]    ; lab5:ilab5|afsm:iafsm|cntdwn[1]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; lab5:ilab5|afsm:iafsm|cntdwn[2]    ; lab5:ilab5|afsm:iafsm|cntdwn[2]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; lab5:ilab5|afsm:iafsm|cntdwn[0]    ; lab5:ilab5|afsm:iafsm|cntdwn[0]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; lab5:ilab5|afsm:iafsm|cntdwn[3]    ; lab5:ilab5|afsm:iafsm|cntdwn[3]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.514 ; lab5:ilab5|lcddisp:ilcddisp|j[31]  ; lab5:ilab5|lcddisp:ilcddisp|j[31]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.780      ;
+; 0.526 ; lab5:ilab5|lcddisp:ilcddisp|i[31]  ; lab5:ilab5|lcddisp:ilcddisp|i[31]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.792      ;
+; 0.774 ; lab5:ilab5|secgen:isecgen|temp[13] ; lab5:ilab5|secgen:isecgen|temp[13]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.040      ;
+; 0.779 ; lab5:ilab5|secgen:isecgen|temp[1]  ; lab5:ilab5|secgen:isecgen|temp[1]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.045      ;
+; 0.783 ; lab5:ilab5|secgen:isecgen|temp[11] ; lab5:ilab5|secgen:isecgen|temp[11]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.049      ;
+; 0.801 ; lab5:ilab5|lcddisp:ilcddisp|i[30]  ; lab5:ilab5|lcddisp:ilcddisp|i[30]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.067      ;
+; 0.801 ; lab5:ilab5|secgen:isecgen|temp[6]  ; lab5:ilab5|secgen:isecgen|temp[6]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.067      ;
+; 0.802 ; lab5:ilab5|lcddisp:ilcddisp|i[4]   ; lab5:ilab5|lcddisp:ilcddisp|i[4]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.068      ;
+; 0.802 ; lab5:ilab5|lcddisp:ilcddisp|i[11]  ; lab5:ilab5|lcddisp:ilcddisp|i[11]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.068      ;
+; 0.802 ; lab5:ilab5|secgen:isecgen|temp[24] ; lab5:ilab5|secgen:isecgen|temp[24]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.068      ;
+; 0.803 ; lab5:ilab5|lcddisp:ilcddisp|i[20]  ; lab5:ilab5|lcddisp:ilcddisp|i[20]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.069      ;
+; 0.806 ; lab5:ilab5|secgen:isecgen|temp[4]  ; lab5:ilab5|secgen:isecgen|temp[4]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; lab5:ilab5|secgen:isecgen|temp[8]  ; lab5:ilab5|secgen:isecgen|temp[8]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.072      ;
+; 0.808 ; lab5:ilab5|lcddisp:ilcddisp|i[16]  ; lab5:ilab5|lcddisp:ilcddisp|i[16]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.074      ;
+; 0.809 ; lab5:ilab5|lcddisp:ilcddisp|i[9]   ; lab5:ilab5|lcddisp:ilcddisp|i[9]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.075      ;
+; 0.810 ; lab5:ilab5|lcddisp:ilcddisp|i[7]   ; lab5:ilab5|lcddisp:ilcddisp|i[7]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.076      ;
+; 0.810 ; lab5:ilab5|lcddisp:ilcddisp|i[14]  ; lab5:ilab5|lcddisp:ilcddisp|i[14]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.076      ;
+; 0.810 ; lab5:ilab5|lcddisp:ilcddisp|i[15]  ; lab5:ilab5|lcddisp:ilcddisp|i[15]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.076      ;
+; 0.810 ; lab5:ilab5|secgen:isecgen|temp[10] ; lab5:ilab5|secgen:isecgen|temp[10]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.076      ;
+; 0.814 ; lab5:ilab5|secgen:isecgen|temp[12] ; lab5:ilab5|secgen:isecgen|temp[12]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.080      ;
+; 0.817 ; lab5:ilab5|secgen:isecgen|temp[3]  ; lab5:ilab5|secgen:isecgen|temp[3]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.083      ;
+; 0.818 ; lab5:ilab5|secgen:isecgen|temp[5]  ; lab5:ilab5|secgen:isecgen|temp[5]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.084      ;
+; 0.819 ; lab5:ilab5|afsm:iafsm|cntdwn[0]    ; lab5:ilab5|afsm:iafsm|cntdwn[1]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.085      ;
+; 0.820 ; lab5:ilab5|secgen:isecgen|temp[7]  ; lab5:ilab5|secgen:isecgen|temp[7]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.086      ;
+; 0.821 ; lab5:ilab5|secgen:isecgen|temp[9]  ; lab5:ilab5|secgen:isecgen|temp[9]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.087      ;
+; 0.828 ; lab5:ilab5|lcddisp:ilcddisp|i[28]  ; lab5:ilab5|lcddisp:ilcddisp|i[28]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.094      ;
+; 0.834 ; lab5:ilab5|secgen:isecgen|temp[16] ; lab5:ilab5|secgen:isecgen|temp[16]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.100      ;
+; 0.835 ; lab5:ilab5|lcddisp:ilcddisp|i[21]  ; lab5:ilab5|lcddisp:ilcddisp|i[21]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.101      ;
+; 0.835 ; lab5:ilab5|lcddisp:ilcddisp|i[22]  ; lab5:ilab5|lcddisp:ilcddisp|i[22]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.101      ;
+; 0.838 ; lab5:ilab5|lcddisp:ilcddisp|i[10]  ; lab5:ilab5|lcddisp:ilcddisp|i[10]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.104      ;
+; 0.838 ; lab5:ilab5|lcddisp:ilcddisp|i[12]  ; lab5:ilab5|lcddisp:ilcddisp|i[12]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.104      ;
+; 0.842 ; lab5:ilab5|mfsm:imfsm|state.WAY1   ; lab5:ilab5|mfsm:imfsm|state.CHR1    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.108      ;
+; 0.843 ; lab5:ilab5|lcddisp:ilcddisp|i[5]   ; lab5:ilab5|lcddisp:ilcddisp|i[5]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.109      ;
+; 0.843 ; lab5:ilab5|lcddisp:ilcddisp|i[6]   ; lab5:ilab5|lcddisp:ilcddisp|i[6]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.109      ;
+; 0.843 ; lab5:ilab5|secgen:isecgen|temp[2]  ; lab5:ilab5|secgen:isecgen|temp[2]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.109      ;
+; 0.846 ; lab5:ilab5|lcddisp:ilcddisp|i[8]   ; lab5:ilab5|lcddisp:ilcddisp|i[8]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.112      ;
+; 0.846 ; lab5:ilab5|secgen:isecgen|temp[0]  ; lab5:ilab5|secgen:isecgen|temp[0]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.112      ;
+; 0.852 ; lab5:ilab5|mfsm:imfsm|state.WAY2   ; lab5:ilab5|mfsm:imfsm|state.CHR2    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.118      ;
+; 0.940 ; lab5:ilab5|afsm:iafsm|state.CHR1   ; lab5:ilab5|afsm:iafsm|state.WAY2    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.206      ;
+; 0.944 ; lab5:ilab5|afsm:iafsm|state.WAY1   ; lab5:ilab5|afsm:iafsm|state.CHR1    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.210      ;
+; 0.947 ; lab5:ilab5|lcddisp:ilcddisp|j[4]   ; lab5:ilab5|lcddisp:ilcddisp|data[0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.213      ;
+; 0.951 ; lab5:ilab5|secgen:isecgen|temp[23] ; lab5:ilab5|secgen:isecgen|temp[23]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.217      ;
+; 0.951 ; lab5:ilab5|afsm:iafsm|state.WAY2   ; lab5:ilab5|afsm:iafsm|state.CHR2    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.217      ;
+; 0.952 ; lab5:ilab5|secgen:isecgen|temp[19] ; lab5:ilab5|secgen:isecgen|temp[19]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.218      ;
+; 0.959 ; lab5:ilab5|secgen:isecgen|temp[21] ; lab5:ilab5|secgen:isecgen|temp[21]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.225      ;
+; 0.978 ; lab5:ilab5|secgen:isecgen|temp[18] ; lab5:ilab5|secgen:isecgen|temp[18]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.244      ;
+; 0.986 ; lab5:ilab5|secgen:isecgen|temp[15] ; lab5:ilab5|secgen:isecgen|temp[15]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.252      ;
+; 0.986 ; lab5:ilab5|secgen:isecgen|temp[17] ; lab5:ilab5|secgen:isecgen|temp[17]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.252      ;
+; 1.015 ; lab5:ilab5|secgen:isecgen|temp[22] ; lab5:ilab5|secgen:isecgen|temp[22]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.281      ;
+; 1.087 ; lab5:ilab5|afsm:iafsm|state.WAY1   ; lab5:ilab5|afsm:iafsm|state.WAY1    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.353      ;
+; 1.160 ; lab5:ilab5|lcddisp:ilcddisp|j[2]   ; lab5:ilab5|lcddisp:ilcddisp|data[2] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.013     ; 1.413      ;
+; 1.184 ; lab5:ilab5|lcddisp:ilcddisp|i[30]  ; lab5:ilab5|lcddisp:ilcddisp|i[31]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.450      ;
+; 1.184 ; lab5:ilab5|secgen:isecgen|temp[6]  ; lab5:ilab5|secgen:isecgen|temp[7]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.450      ;
+; 1.185 ; lab5:ilab5|secgen:isecgen|temp[24] ; lab5:ilab5|secgen:isecgen|temp[25]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.451      ;
+; 1.185 ; lab5:ilab5|lcddisp:ilcddisp|i[11]  ; lab5:ilab5|lcddisp:ilcddisp|i[12]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.451      ;
+; 1.185 ; lab5:ilab5|lcddisp:ilcddisp|i[4]   ; lab5:ilab5|lcddisp:ilcddisp|i[5]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.451      ;
+; 1.186 ; lab5:ilab5|lcddisp:ilcddisp|i[20]  ; lab5:ilab5|lcddisp:ilcddisp|i[21]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.452      ;
+; 1.189 ; lab5:ilab5|secgen:isecgen|temp[8]  ; lab5:ilab5|secgen:isecgen|temp[9]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.455      ;
+; 1.189 ; lab5:ilab5|secgen:isecgen|temp[1]  ; lab5:ilab5|secgen:isecgen|temp[2]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.455      ;
+; 1.192 ; lab5:ilab5|lcddisp:ilcddisp|i[9]   ; lab5:ilab5|lcddisp:ilcddisp|i[10]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.458      ;
+; 1.193 ; lab5:ilab5|secgen:isecgen|temp[10] ; lab5:ilab5|secgen:isecgen|temp[11]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.459      ;
+; 1.193 ; lab5:ilab5|lcddisp:ilcddisp|i[14]  ; lab5:ilab5|lcddisp:ilcddisp|i[15]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.459      ;
+; 1.193 ; lab5:ilab5|secgen:isecgen|temp[11] ; lab5:ilab5|secgen:isecgen|temp[12]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.459      ;
+; 1.196 ; lab5:ilab5|lcddisp:ilcddisp|lcd_rs ; lab5:ilab5|lcddisp:ilcddisp|lcd_rs  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.462      ;
+; 1.220 ; lab5:ilab5|secgen:isecgen|temp[16] ; lab5:ilab5|secgen:isecgen|temp[17]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.486      ;
+; 1.221 ; lab5:ilab5|lcddisp:ilcddisp|i[21]  ; lab5:ilab5|lcddisp:ilcddisp|i[22]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.487      ;
+; 1.224 ; lab5:ilab5|lcddisp:ilcddisp|i[10]  ; lab5:ilab5|lcddisp:ilcddisp|i[11]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.490      ;
+; 1.228 ; lab5:ilab5|secgen:isecgen|temp[3]  ; lab5:ilab5|secgen:isecgen|temp[4]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.494      ;
+; 1.229 ; lab5:ilab5|secgen:isecgen|temp[5]  ; lab5:ilab5|secgen:isecgen|temp[6]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.495      ;
+; 1.229 ; lab5:ilab5|lcddisp:ilcddisp|i[6]   ; lab5:ilab5|lcddisp:ilcddisp|i[7]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.495      ;
+; 1.229 ; lab5:ilab5|secgen:isecgen|temp[2]  ; lab5:ilab5|secgen:isecgen|temp[3]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.495      ;
+; 1.229 ; lab5:ilab5|lcddisp:ilcddisp|i[5]   ; lab5:ilab5|lcddisp:ilcddisp|i[6]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.495      ;
+; 1.231 ; lab5:ilab5|secgen:isecgen|temp[7]  ; lab5:ilab5|secgen:isecgen|temp[8]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.497      ;
+; 1.232 ; lab5:ilab5|secgen:isecgen|temp[0]  ; lab5:ilab5|secgen:isecgen|temp[1]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.498      ;
+; 1.232 ; lab5:ilab5|lcddisp:ilcddisp|i[8]   ; lab5:ilab5|lcddisp:ilcddisp|i[9]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.498      ;
+; 1.232 ; lab5:ilab5|secgen:isecgen|temp[9]  ; lab5:ilab5|secgen:isecgen|temp[10]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.498      ;
+; 1.236 ; lab5:ilab5|secgen:isecgen|temp[20] ; lab5:ilab5|secgen:isecgen|temp[20]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.502      ;
+; 1.236 ; lab5:ilab5|afsm:iafsm|cntdwn[0]    ; lab5:ilab5|afsm:iafsm|cntdwn[2]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.502      ;
+; 1.238 ; lab5:ilab5|mfsm:imfsm|cntdwn[1]    ; lab5:ilab5|mfsm:imfsm|cntdwn[1]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.504      ;
+; 1.238 ; lab5:ilab5|mfsm:imfsm|state.CHR1   ; lab5:ilab5|mfsm:imfsm|state.CHR1    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.504      ;
+; 1.249 ; lab5:ilab5|mfsm:imfsm|state.CHR2   ; lab5:ilab5|mfsm:imfsm|state.CHR2    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.515      ;
+; 1.254 ; lab5:ilab5|secgen:isecgen|temp[25] ; lab5:ilab5|secgen:isecgen|temp[25]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.520      ;
+; 1.255 ; lab5:ilab5|mfsm:imfsm|state.CHR2   ; lab5:ilab5|mfsm:imfsm|state.WAY1    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.521      ;
+; 1.255 ; lab5:ilab5|secgen:isecgen|temp[13] ; lab5:ilab5|secgen:isecgen|temp[15]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.521      ;
+; 1.255 ; lab5:ilab5|secgen:isecgen|temp[6]  ; lab5:ilab5|secgen:isecgen|temp[8]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.521      ;
+; 1.256 ; lab5:ilab5|lcddisp:ilcddisp|i[4]   ; lab5:ilab5|lcddisp:ilcddisp|i[6]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.522      ;
+; 1.257 ; lab5:ilab5|lcddisp:ilcddisp|i[20]  ; lab5:ilab5|lcddisp:ilcddisp|i[22]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.523      ;
+; 1.258 ; lab5:ilab5|afsm:iafsm|state.CHR2   ; lab5:ilab5|afsm:iafsm|state.CHR2    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.524      ;
+; 1.260 ; lab5:ilab5|secgen:isecgen|temp[1]  ; lab5:ilab5|secgen:isecgen|temp[3]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.526      ;
+; 1.260 ; lab5:ilab5|secgen:isecgen|temp[8]  ; lab5:ilab5|secgen:isecgen|temp[10]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.526      ;
+; 1.263 ; lab5:ilab5|lcddisp:ilcddisp|i[9]   ; lab5:ilab5|lcddisp:ilcddisp|i[11]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.529      ;
+; 1.264 ; lab5:ilab5|secgen:isecgen|temp[10] ; lab5:ilab5|secgen:isecgen|temp[12]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.530      ;
+; 1.279 ; lab5:ilab5|secgen:isecgen|temp[12] ; lab5:ilab5|secgen:isecgen|temp[13]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.010      ; 1.555      ;
++-------+------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'CLOCK_50'                                                                              ;
++--------+--------------+----------------+------------------+----------+------------+-------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                              ;
++--------+--------------+----------------+------------------+----------+------------+-------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; CLOCK_50 ; Rise       ; CLOCK_50                            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|afsm:iafsm|cntdwn[0]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|afsm:iafsm|cntdwn[0]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|afsm:iafsm|cntdwn[1]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|afsm:iafsm|cntdwn[1]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|afsm:iafsm|cntdwn[2]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|afsm:iafsm|cntdwn[2]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|afsm:iafsm|cntdwn[3]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|afsm:iafsm|cntdwn[3]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|afsm:iafsm|state.CHR1    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|afsm:iafsm|state.CHR1    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|afsm:iafsm|state.CHR2    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|afsm:iafsm|state.CHR2    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|afsm:iafsm|state.WAY1    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|afsm:iafsm|state.WAY1    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|afsm:iafsm|state.WAY2    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|afsm:iafsm|state.WAY2    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|data[0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|data[0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|data[1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|data[1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|data[2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|data[2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|data[3] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|data[3] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|data[4] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|data[4] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|data[5] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|data[5] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|data[6] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|data[6] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|data[7] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|data[7] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[10]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[10]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[11]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[11]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[12]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[12]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[13]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[13]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[14]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[14]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[15]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[15]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[16]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[16]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[17]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[17]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[18]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[18]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[19]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[19]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[1]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[1]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[20]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[20]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[21]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[21]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[22]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[22]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[23]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[23]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[24]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[24]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[25]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[25]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[26]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[26]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[27]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[27]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[28]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[28]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[29]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[29]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[2]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[2]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[30]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[30]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[31]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[31]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[3]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[3]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[4]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[4]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[5]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[5]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[6]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[6]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[7]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[7]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[8]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[8]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[9]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[9]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|j[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|j[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|j[10]   ;
++--------+--------------+----------------+------------------+----------+------------+-------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; KEY[*]    ; CLOCK_50   ; 5.174 ; 5.174 ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; 5.174 ; 5.174 ; Rise       ; CLOCK_50        ;
+; SW[*]     ; CLOCK_50   ; 0.506 ; 0.506 ; Rise       ; CLOCK_50        ;
+;  SW[1]    ; CLOCK_50   ; 0.506 ; 0.506 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; KEY[*]    ; CLOCK_50   ; -3.300 ; -3.300 ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; -3.300 ; -3.300 ; Rise       ; CLOCK_50        ;
+; SW[*]     ; CLOCK_50   ; 0.432  ; 0.432  ; Rise       ; CLOCK_50        ;
+;  SW[1]    ; CLOCK_50   ; 0.432  ; 0.432  ; Rise       ; CLOCK_50        ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Clock to Output Times                                                      ;
++--------------+------------+--------+--------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------+------------+--------+--------+------------+-----------------+
+; GPIO_0[*]    ; CLOCK_50   ; 10.229 ; 10.229 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[0]   ; CLOCK_50   ; 7.989  ; 7.989  ; Rise       ; CLOCK_50        ;
+;  GPIO_0[1]   ; CLOCK_50   ; 7.382  ; 7.382  ; Rise       ; CLOCK_50        ;
+;  GPIO_0[2]   ; CLOCK_50   ; 7.119  ; 7.119  ; Rise       ; CLOCK_50        ;
+;  GPIO_0[3]   ; CLOCK_50   ; 9.884  ; 9.884  ; Rise       ; CLOCK_50        ;
+;  GPIO_0[4]   ; CLOCK_50   ; 9.436  ; 9.436  ; Rise       ; CLOCK_50        ;
+;  GPIO_0[5]   ; CLOCK_50   ; 9.719  ; 9.719  ; Rise       ; CLOCK_50        ;
+;  GPIO_0[6]   ; CLOCK_50   ; 9.480  ; 9.480  ; Rise       ; CLOCK_50        ;
+;  GPIO_0[7]   ; CLOCK_50   ; 9.197  ; 9.197  ; Rise       ; CLOCK_50        ;
+;  GPIO_0[8]   ; CLOCK_50   ; 9.629  ; 9.629  ; Rise       ; CLOCK_50        ;
+;  GPIO_0[9]   ; CLOCK_50   ; 9.458  ; 9.458  ; Rise       ; CLOCK_50        ;
+;  GPIO_0[10]  ; CLOCK_50   ; 8.186  ; 8.186  ; Rise       ; CLOCK_50        ;
+;  GPIO_0[11]  ; CLOCK_50   ; 7.515  ; 7.515  ; Rise       ; CLOCK_50        ;
+;  GPIO_0[12]  ; CLOCK_50   ; 7.022  ; 7.022  ; Rise       ; CLOCK_50        ;
+;  GPIO_0[13]  ; CLOCK_50   ; 10.102 ; 10.102 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[14]  ; CLOCK_50   ; 9.273  ; 9.273  ; Rise       ; CLOCK_50        ;
+;  GPIO_0[15]  ; CLOCK_50   ; 9.660  ; 9.660  ; Rise       ; CLOCK_50        ;
+;  GPIO_0[16]  ; CLOCK_50   ; 10.229 ; 10.229 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[17]  ; CLOCK_50   ; 10.024 ; 10.024 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[18]  ; CLOCK_50   ; 9.407  ; 9.407  ; Rise       ; CLOCK_50        ;
+;  GPIO_0[19]  ; CLOCK_50   ; 9.757  ; 9.757  ; Rise       ; CLOCK_50        ;
+; LCD_DATA[*]  ; CLOCK_50   ; 6.902  ; 6.902  ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[0] ; CLOCK_50   ; 6.902  ; 6.902  ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[1] ; CLOCK_50   ; 6.703  ; 6.703  ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[2] ; CLOCK_50   ; 6.759  ; 6.759  ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[3] ; CLOCK_50   ; 6.711  ; 6.711  ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[4] ; CLOCK_50   ; 6.709  ; 6.709  ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[5] ; CLOCK_50   ; 6.693  ; 6.693  ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[6] ; CLOCK_50   ; 6.692  ; 6.692  ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[7] ; CLOCK_50   ; 6.721  ; 6.721  ; Rise       ; CLOCK_50        ;
+; LCD_EN       ; CLOCK_50   ; 6.729  ; 6.729  ; Rise       ; CLOCK_50        ;
+; LCD_RS       ; CLOCK_50   ; 7.045  ; 7.045  ; Rise       ; CLOCK_50        ;
++--------------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                            ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; GPIO_0[*]    ; CLOCK_50   ; 6.846 ; 6.846 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[0]   ; CLOCK_50   ; 6.846 ; 6.846 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[1]   ; CLOCK_50   ; 7.269 ; 7.269 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[2]   ; CLOCK_50   ; 7.016 ; 7.016 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[3]   ; CLOCK_50   ; 7.653 ; 7.653 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[4]   ; CLOCK_50   ; 7.165 ; 7.165 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[5]   ; CLOCK_50   ; 7.560 ; 7.560 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[6]   ; CLOCK_50   ; 7.570 ; 7.570 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[7]   ; CLOCK_50   ; 7.197 ; 7.197 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[8]   ; CLOCK_50   ; 8.552 ; 8.552 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[9]   ; CLOCK_50   ; 7.596 ; 7.596 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[10]  ; CLOCK_50   ; 7.078 ; 7.078 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[11]  ; CLOCK_50   ; 7.063 ; 7.063 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[12]  ; CLOCK_50   ; 6.974 ; 6.974 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[13]  ; CLOCK_50   ; 7.979 ; 7.979 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[14]  ; CLOCK_50   ; 7.506 ; 7.506 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[15]  ; CLOCK_50   ; 7.628 ; 7.628 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[16]  ; CLOCK_50   ; 8.561 ; 8.561 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[17]  ; CLOCK_50   ; 7.881 ; 7.881 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[18]  ; CLOCK_50   ; 8.079 ; 8.079 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[19]  ; CLOCK_50   ; 8.089 ; 8.089 ; Rise       ; CLOCK_50        ;
+; LCD_DATA[*]  ; CLOCK_50   ; 6.692 ; 6.692 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[0] ; CLOCK_50   ; 6.902 ; 6.902 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[1] ; CLOCK_50   ; 6.703 ; 6.703 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[2] ; CLOCK_50   ; 6.759 ; 6.759 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[3] ; CLOCK_50   ; 6.711 ; 6.711 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[4] ; CLOCK_50   ; 6.709 ; 6.709 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[5] ; CLOCK_50   ; 6.693 ; 6.693 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[6] ; CLOCK_50   ; 6.692 ; 6.692 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[7] ; CLOCK_50   ; 6.721 ; 6.721 ; Rise       ; CLOCK_50        ;
+; LCD_EN       ; CLOCK_50   ; 6.729 ; 6.729 ; Rise       ; CLOCK_50        ;
+; LCD_RS       ; CLOCK_50   ; 7.045 ; 7.045 ; Rise       ; CLOCK_50        ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------+
+; Propagation Delay                                        ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; SW[0]      ; GPIO_0[0]   ; 5.888 ; 6.552 ; 6.552 ; 5.888 ;
+; SW[0]      ; GPIO_0[1]   ; 6.098 ; 6.098 ; 6.098 ; 6.098 ;
+; SW[0]      ; GPIO_0[2]   ; 5.884 ; 5.884 ; 5.884 ; 5.884 ;
+; SW[0]      ; GPIO_0[3]   ; 6.604 ; 6.604 ; 6.604 ; 6.604 ;
+; SW[0]      ; GPIO_0[4]   ; 6.118 ; 6.118 ; 6.118 ; 6.118 ;
+; SW[0]      ; GPIO_0[5]   ; 5.951 ; 5.951 ; 5.951 ; 5.951 ;
+; SW[0]      ; GPIO_0[6]   ; 5.946 ; 6.495 ; 6.495 ; 5.946 ;
+; SW[0]      ; GPIO_0[7]   ; 6.124 ; 6.124 ; 6.124 ; 6.124 ;
+; SW[0]      ; GPIO_0[8]   ; 6.427 ;       ;       ; 6.427 ;
+; SW[0]      ; GPIO_0[9]   ; 5.976 ; 6.521 ; 6.521 ; 5.976 ;
+; SW[0]      ; GPIO_0[10]  ; 6.120 ; 6.953 ; 6.953 ; 6.120 ;
+; SW[0]      ; GPIO_0[11]  ; 6.099 ; 6.099 ; 6.099 ; 6.099 ;
+; SW[0]      ; GPIO_0[12]  ; 6.067 ; 6.067 ; 6.067 ; 6.067 ;
+; SW[0]      ; GPIO_0[13]  ; 6.310 ; 6.310 ; 6.310 ; 6.310 ;
+; SW[0]      ; GPIO_0[14]  ; 6.042 ; 6.042 ; 6.042 ; 6.042 ;
+; SW[0]      ; GPIO_0[15]  ; 6.285 ; 6.285 ; 6.285 ; 6.285 ;
+; SW[0]      ; GPIO_0[16]  ; 6.393 ; 7.198 ; 7.198 ; 6.393 ;
+; SW[0]      ; GPIO_0[17]  ; 6.039 ; 6.039 ; 6.039 ; 6.039 ;
+; SW[0]      ; GPIO_0[18]  ; 5.892 ;       ;       ; 5.892 ;
+; SW[0]      ; GPIO_0[19]  ; 5.925 ; 6.726 ; 6.726 ; 5.925 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++----------------------------------------------------------+
+; Minimum Propagation Delay                                ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; SW[0]      ; GPIO_0[0]   ; 5.888 ; 6.552 ; 6.552 ; 5.888 ;
+; SW[0]      ; GPIO_0[1]   ; 6.098 ; 6.098 ; 6.098 ; 6.098 ;
+; SW[0]      ; GPIO_0[2]   ; 5.884 ; 5.884 ; 5.884 ; 5.884 ;
+; SW[0]      ; GPIO_0[3]   ; 6.604 ; 6.604 ; 6.604 ; 6.604 ;
+; SW[0]      ; GPIO_0[4]   ; 6.118 ; 6.118 ; 6.118 ; 6.118 ;
+; SW[0]      ; GPIO_0[5]   ; 5.951 ; 5.951 ; 5.951 ; 5.951 ;
+; SW[0]      ; GPIO_0[6]   ; 5.946 ; 6.495 ; 6.495 ; 5.946 ;
+; SW[0]      ; GPIO_0[7]   ; 6.124 ; 6.124 ; 6.124 ; 6.124 ;
+; SW[0]      ; GPIO_0[8]   ; 6.427 ;       ;       ; 6.427 ;
+; SW[0]      ; GPIO_0[9]   ; 5.976 ; 6.521 ; 6.521 ; 5.976 ;
+; SW[0]      ; GPIO_0[10]  ; 6.120 ; 6.953 ; 6.953 ; 6.120 ;
+; SW[0]      ; GPIO_0[11]  ; 6.099 ; 6.099 ; 6.099 ; 6.099 ;
+; SW[0]      ; GPIO_0[12]  ; 6.067 ; 6.067 ; 6.067 ; 6.067 ;
+; SW[0]      ; GPIO_0[13]  ; 6.310 ; 6.310 ; 6.310 ; 6.310 ;
+; SW[0]      ; GPIO_0[14]  ; 6.042 ; 6.042 ; 6.042 ; 6.042 ;
+; SW[0]      ; GPIO_0[15]  ; 6.285 ; 6.285 ; 6.285 ; 6.285 ;
+; SW[0]      ; GPIO_0[16]  ; 6.393 ; 7.198 ; 7.198 ; 6.393 ;
+; SW[0]      ; GPIO_0[17]  ; 6.039 ; 6.039 ; 6.039 ; 6.039 ;
+; SW[0]      ; GPIO_0[18]  ; 5.892 ;       ;       ; 5.892 ;
+; SW[0]      ; GPIO_0[19]  ; 5.925 ; 6.726 ; 6.726 ; 5.925 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++-----------------------------------+
+; Fast Model Setup Summary          ;
++----------+--------+---------------+
+; Clock    ; Slack  ; End Point TNS ;
++----------+--------+---------------+
+; CLOCK_50 ; -3.190 ; -173.365      ;
++----------+--------+---------------+
+
+
++----------------------------------+
+; Fast Model Hold Summary          ;
++----------+-------+---------------+
+; Clock    ; Slack ; End Point TNS ;
++----------+-------+---------------+
+; CLOCK_50 ; 0.215 ; 0.000         ;
++----------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++----------+--------+--------------------+
+; Clock    ; Slack  ; End Point TNS      ;
++----------+--------+--------------------+
+; CLOCK_50 ; -1.380 ; -115.380           ;
++----------+--------+--------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'CLOCK_50'                                                                                                                         ;
++--------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                         ; To Node                           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+; -3.190 ; lab5:ilab5|lcddisp:ilcddisp|i[21] ; lab5:ilab5|lcddisp:ilcddisp|j[6]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 4.213      ;
+; -3.190 ; lab5:ilab5|lcddisp:ilcddisp|i[21] ; lab5:ilab5|lcddisp:ilcddisp|j[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 4.213      ;
+; -3.189 ; lab5:ilab5|lcddisp:ilcddisp|i[21] ; lab5:ilab5|lcddisp:ilcddisp|j[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 4.212      ;
+; -3.188 ; lab5:ilab5|lcddisp:ilcddisp|i[21] ; lab5:ilab5|lcddisp:ilcddisp|j[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 4.211      ;
+; -3.185 ; lab5:ilab5|lcddisp:ilcddisp|i[21] ; lab5:ilab5|lcddisp:ilcddisp|j[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 4.208      ;
+; -3.185 ; lab5:ilab5|lcddisp:ilcddisp|i[21] ; lab5:ilab5|lcddisp:ilcddisp|j[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 4.208      ;
+; -3.184 ; lab5:ilab5|lcddisp:ilcddisp|i[21] ; lab5:ilab5|lcddisp:ilcddisp|j[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 4.207      ;
+; -3.183 ; lab5:ilab5|lcddisp:ilcddisp|i[11] ; lab5:ilab5|lcddisp:ilcddisp|j[6]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 4.210      ;
+; -3.183 ; lab5:ilab5|lcddisp:ilcddisp|i[11] ; lab5:ilab5|lcddisp:ilcddisp|j[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 4.210      ;
+; -3.182 ; lab5:ilab5|lcddisp:ilcddisp|i[11] ; lab5:ilab5|lcddisp:ilcddisp|j[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 4.209      ;
+; -3.181 ; lab5:ilab5|lcddisp:ilcddisp|i[11] ; lab5:ilab5|lcddisp:ilcddisp|j[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 4.208      ;
+; -3.178 ; lab5:ilab5|lcddisp:ilcddisp|i[11] ; lab5:ilab5|lcddisp:ilcddisp|j[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 4.205      ;
+; -3.178 ; lab5:ilab5|lcddisp:ilcddisp|i[11] ; lab5:ilab5|lcddisp:ilcddisp|j[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 4.205      ;
+; -3.177 ; lab5:ilab5|lcddisp:ilcddisp|i[0]  ; lab5:ilab5|lcddisp:ilcddisp|j[6]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 4.204      ;
+; -3.177 ; lab5:ilab5|lcddisp:ilcddisp|i[0]  ; lab5:ilab5|lcddisp:ilcddisp|j[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 4.204      ;
+; -3.177 ; lab5:ilab5|lcddisp:ilcddisp|i[11] ; lab5:ilab5|lcddisp:ilcddisp|j[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 4.204      ;
+; -3.176 ; lab5:ilab5|lcddisp:ilcddisp|i[0]  ; lab5:ilab5|lcddisp:ilcddisp|j[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 4.203      ;
+; -3.175 ; lab5:ilab5|lcddisp:ilcddisp|i[0]  ; lab5:ilab5|lcddisp:ilcddisp|j[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 4.202      ;
+; -3.172 ; lab5:ilab5|lcddisp:ilcddisp|i[0]  ; lab5:ilab5|lcddisp:ilcddisp|j[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 4.199      ;
+; -3.172 ; lab5:ilab5|lcddisp:ilcddisp|i[0]  ; lab5:ilab5|lcddisp:ilcddisp|j[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 4.199      ;
+; -3.171 ; lab5:ilab5|lcddisp:ilcddisp|i[0]  ; lab5:ilab5|lcddisp:ilcddisp|j[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 4.198      ;
+; -3.171 ; lab5:ilab5|lcddisp:ilcddisp|i[5]  ; lab5:ilab5|lcddisp:ilcddisp|j[6]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 4.198      ;
+; -3.171 ; lab5:ilab5|lcddisp:ilcddisp|i[5]  ; lab5:ilab5|lcddisp:ilcddisp|j[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 4.198      ;
+; -3.170 ; lab5:ilab5|lcddisp:ilcddisp|i[5]  ; lab5:ilab5|lcddisp:ilcddisp|j[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 4.197      ;
+; -3.169 ; lab5:ilab5|lcddisp:ilcddisp|i[5]  ; lab5:ilab5|lcddisp:ilcddisp|j[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 4.196      ;
+; -3.168 ; lab5:ilab5|lcddisp:ilcddisp|i[1]  ; lab5:ilab5|lcddisp:ilcddisp|j[6]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 4.195      ;
+; -3.168 ; lab5:ilab5|lcddisp:ilcddisp|i[1]  ; lab5:ilab5|lcddisp:ilcddisp|j[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 4.195      ;
+; -3.167 ; lab5:ilab5|lcddisp:ilcddisp|i[1]  ; lab5:ilab5|lcddisp:ilcddisp|j[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 4.194      ;
+; -3.166 ; lab5:ilab5|lcddisp:ilcddisp|i[1]  ; lab5:ilab5|lcddisp:ilcddisp|j[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 4.193      ;
+; -3.166 ; lab5:ilab5|lcddisp:ilcddisp|i[5]  ; lab5:ilab5|lcddisp:ilcddisp|j[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 4.193      ;
+; -3.166 ; lab5:ilab5|lcddisp:ilcddisp|i[5]  ; lab5:ilab5|lcddisp:ilcddisp|j[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 4.193      ;
+; -3.165 ; lab5:ilab5|lcddisp:ilcddisp|i[5]  ; lab5:ilab5|lcddisp:ilcddisp|j[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 4.192      ;
+; -3.163 ; lab5:ilab5|lcddisp:ilcddisp|i[1]  ; lab5:ilab5|lcddisp:ilcddisp|j[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 4.190      ;
+; -3.163 ; lab5:ilab5|lcddisp:ilcddisp|i[1]  ; lab5:ilab5|lcddisp:ilcddisp|j[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 4.190      ;
+; -3.162 ; lab5:ilab5|lcddisp:ilcddisp|i[1]  ; lab5:ilab5|lcddisp:ilcddisp|j[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 4.189      ;
+; -3.157 ; lab5:ilab5|lcddisp:ilcddisp|i[22] ; lab5:ilab5|lcddisp:ilcddisp|j[6]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 4.180      ;
+; -3.157 ; lab5:ilab5|lcddisp:ilcddisp|i[22] ; lab5:ilab5|lcddisp:ilcddisp|j[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 4.180      ;
+; -3.157 ; lab5:ilab5|lcddisp:ilcddisp|i[13] ; lab5:ilab5|lcddisp:ilcddisp|j[6]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 4.184      ;
+; -3.157 ; lab5:ilab5|lcddisp:ilcddisp|i[13] ; lab5:ilab5|lcddisp:ilcddisp|j[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 4.184      ;
+; -3.156 ; lab5:ilab5|lcddisp:ilcddisp|i[22] ; lab5:ilab5|lcddisp:ilcddisp|j[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 4.179      ;
+; -3.156 ; lab5:ilab5|lcddisp:ilcddisp|i[13] ; lab5:ilab5|lcddisp:ilcddisp|j[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 4.183      ;
+; -3.155 ; lab5:ilab5|lcddisp:ilcddisp|i[22] ; lab5:ilab5|lcddisp:ilcddisp|j[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 4.178      ;
+; -3.155 ; lab5:ilab5|lcddisp:ilcddisp|i[13] ; lab5:ilab5|lcddisp:ilcddisp|j[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 4.182      ;
+; -3.152 ; lab5:ilab5|lcddisp:ilcddisp|i[22] ; lab5:ilab5|lcddisp:ilcddisp|j[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 4.175      ;
+; -3.152 ; lab5:ilab5|lcddisp:ilcddisp|i[22] ; lab5:ilab5|lcddisp:ilcddisp|j[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 4.175      ;
+; -3.152 ; lab5:ilab5|lcddisp:ilcddisp|i[13] ; lab5:ilab5|lcddisp:ilcddisp|j[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 4.179      ;
+; -3.152 ; lab5:ilab5|lcddisp:ilcddisp|i[13] ; lab5:ilab5|lcddisp:ilcddisp|j[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 4.179      ;
+; -3.151 ; lab5:ilab5|lcddisp:ilcddisp|i[22] ; lab5:ilab5|lcddisp:ilcddisp|j[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 4.174      ;
+; -3.151 ; lab5:ilab5|lcddisp:ilcddisp|i[13] ; lab5:ilab5|lcddisp:ilcddisp|j[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 4.178      ;
+; -3.149 ; lab5:ilab5|lcddisp:ilcddisp|i[14] ; lab5:ilab5|lcddisp:ilcddisp|j[6]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 4.176      ;
+; -3.149 ; lab5:ilab5|lcddisp:ilcddisp|i[14] ; lab5:ilab5|lcddisp:ilcddisp|j[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 4.176      ;
+; -3.148 ; lab5:ilab5|lcddisp:ilcddisp|i[14] ; lab5:ilab5|lcddisp:ilcddisp|j[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 4.175      ;
+; -3.147 ; lab5:ilab5|lcddisp:ilcddisp|i[14] ; lab5:ilab5|lcddisp:ilcddisp|j[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 4.174      ;
+; -3.144 ; lab5:ilab5|lcddisp:ilcddisp|i[14] ; lab5:ilab5|lcddisp:ilcddisp|j[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 4.171      ;
+; -3.144 ; lab5:ilab5|lcddisp:ilcddisp|i[14] ; lab5:ilab5|lcddisp:ilcddisp|j[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 4.171      ;
+; -3.143 ; lab5:ilab5|lcddisp:ilcddisp|i[31] ; lab5:ilab5|lcddisp:ilcddisp|j[6]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 4.166      ;
+; -3.143 ; lab5:ilab5|lcddisp:ilcddisp|i[31] ; lab5:ilab5|lcddisp:ilcddisp|j[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 4.166      ;
+; -3.143 ; lab5:ilab5|lcddisp:ilcddisp|i[14] ; lab5:ilab5|lcddisp:ilcddisp|j[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 4.170      ;
+; -3.142 ; lab5:ilab5|lcddisp:ilcddisp|i[31] ; lab5:ilab5|lcddisp:ilcddisp|j[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 4.165      ;
+; -3.141 ; lab5:ilab5|lcddisp:ilcddisp|i[31] ; lab5:ilab5|lcddisp:ilcddisp|j[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 4.164      ;
+; -3.138 ; lab5:ilab5|lcddisp:ilcddisp|i[31] ; lab5:ilab5|lcddisp:ilcddisp|j[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 4.161      ;
+; -3.138 ; lab5:ilab5|lcddisp:ilcddisp|i[31] ; lab5:ilab5|lcddisp:ilcddisp|j[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 4.161      ;
+; -3.137 ; lab5:ilab5|lcddisp:ilcddisp|i[31] ; lab5:ilab5|lcddisp:ilcddisp|j[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 4.160      ;
+; -3.137 ; lab5:ilab5|lcddisp:ilcddisp|i[6]  ; lab5:ilab5|lcddisp:ilcddisp|j[6]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 4.164      ;
+; -3.137 ; lab5:ilab5|lcddisp:ilcddisp|i[6]  ; lab5:ilab5|lcddisp:ilcddisp|j[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 4.164      ;
+; -3.136 ; lab5:ilab5|lcddisp:ilcddisp|i[21] ; lab5:ilab5|lcddisp:ilcddisp|j[20] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.008     ; 4.160      ;
+; -3.136 ; lab5:ilab5|lcddisp:ilcddisp|i[6]  ; lab5:ilab5|lcddisp:ilcddisp|j[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 4.163      ;
+; -3.135 ; lab5:ilab5|lcddisp:ilcddisp|i[21] ; lab5:ilab5|lcddisp:ilcddisp|j[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.008     ; 4.159      ;
+; -3.135 ; lab5:ilab5|lcddisp:ilcddisp|i[21] ; lab5:ilab5|lcddisp:ilcddisp|j[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.008     ; 4.159      ;
+; -3.135 ; lab5:ilab5|lcddisp:ilcddisp|i[6]  ; lab5:ilab5|lcddisp:ilcddisp|j[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 4.162      ;
+; -3.134 ; lab5:ilab5|lcddisp:ilcddisp|i[21] ; lab5:ilab5|lcddisp:ilcddisp|j[4]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.008     ; 4.158      ;
+; -3.134 ; lab5:ilab5|lcddisp:ilcddisp|i[21] ; lab5:ilab5|lcddisp:ilcddisp|j[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.008     ; 4.158      ;
+; -3.134 ; lab5:ilab5|lcddisp:ilcddisp|i[21] ; lab5:ilab5|lcddisp:ilcddisp|j[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.008     ; 4.158      ;
+; -3.133 ; lab5:ilab5|lcddisp:ilcddisp|i[21] ; lab5:ilab5|lcddisp:ilcddisp|j[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.008     ; 4.157      ;
+; -3.133 ; lab5:ilab5|lcddisp:ilcddisp|i[21] ; lab5:ilab5|lcddisp:ilcddisp|j[18] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.008     ; 4.157      ;
+; -3.132 ; lab5:ilab5|lcddisp:ilcddisp|i[21] ; lab5:ilab5|lcddisp:ilcddisp|j[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.008     ; 4.156      ;
+; -3.132 ; lab5:ilab5|lcddisp:ilcddisp|i[21] ; lab5:ilab5|lcddisp:ilcddisp|j[19] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.008     ; 4.156      ;
+; -3.132 ; lab5:ilab5|lcddisp:ilcddisp|i[20] ; lab5:ilab5|lcddisp:ilcddisp|j[6]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 4.155      ;
+; -3.132 ; lab5:ilab5|lcddisp:ilcddisp|i[20] ; lab5:ilab5|lcddisp:ilcddisp|j[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 4.155      ;
+; -3.132 ; lab5:ilab5|lcddisp:ilcddisp|i[6]  ; lab5:ilab5|lcddisp:ilcddisp|j[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 4.159      ;
+; -3.132 ; lab5:ilab5|lcddisp:ilcddisp|i[6]  ; lab5:ilab5|lcddisp:ilcddisp|j[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 4.159      ;
+; -3.131 ; lab5:ilab5|lcddisp:ilcddisp|i[21] ; lab5:ilab5|lcddisp:ilcddisp|j[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.008     ; 4.155      ;
+; -3.131 ; lab5:ilab5|lcddisp:ilcddisp|i[20] ; lab5:ilab5|lcddisp:ilcddisp|j[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 4.154      ;
+; -3.131 ; lab5:ilab5|lcddisp:ilcddisp|i[6]  ; lab5:ilab5|lcddisp:ilcddisp|j[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 4.158      ;
+; -3.130 ; lab5:ilab5|lcddisp:ilcddisp|i[20] ; lab5:ilab5|lcddisp:ilcddisp|j[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 4.153      ;
+; -3.129 ; lab5:ilab5|lcddisp:ilcddisp|i[11] ; lab5:ilab5|lcddisp:ilcddisp|j[20] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 4.157      ;
+; -3.128 ; lab5:ilab5|lcddisp:ilcddisp|i[11] ; lab5:ilab5|lcddisp:ilcddisp|j[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 4.156      ;
+; -3.128 ; lab5:ilab5|lcddisp:ilcddisp|i[11] ; lab5:ilab5|lcddisp:ilcddisp|j[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 4.156      ;
+; -3.127 ; lab5:ilab5|lcddisp:ilcddisp|i[20] ; lab5:ilab5|lcddisp:ilcddisp|j[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 4.150      ;
+; -3.127 ; lab5:ilab5|lcddisp:ilcddisp|i[20] ; lab5:ilab5|lcddisp:ilcddisp|j[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 4.150      ;
+; -3.127 ; lab5:ilab5|lcddisp:ilcddisp|i[11] ; lab5:ilab5|lcddisp:ilcddisp|j[4]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 4.155      ;
+; -3.127 ; lab5:ilab5|lcddisp:ilcddisp|i[11] ; lab5:ilab5|lcddisp:ilcddisp|j[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 4.155      ;
+; -3.127 ; lab5:ilab5|lcddisp:ilcddisp|i[11] ; lab5:ilab5|lcddisp:ilcddisp|j[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 4.155      ;
+; -3.126 ; lab5:ilab5|lcddisp:ilcddisp|i[20] ; lab5:ilab5|lcddisp:ilcddisp|j[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 4.149      ;
+; -3.126 ; lab5:ilab5|lcddisp:ilcddisp|i[11] ; lab5:ilab5|lcddisp:ilcddisp|j[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 4.154      ;
+; -3.126 ; lab5:ilab5|lcddisp:ilcddisp|i[11] ; lab5:ilab5|lcddisp:ilcddisp|j[18] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 4.154      ;
+; -3.125 ; lab5:ilab5|lcddisp:ilcddisp|i[11] ; lab5:ilab5|lcddisp:ilcddisp|j[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 4.153      ;
+; -3.125 ; lab5:ilab5|lcddisp:ilcddisp|i[11] ; lab5:ilab5|lcddisp:ilcddisp|j[19] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 4.153      ;
+; -3.124 ; lab5:ilab5|lcddisp:ilcddisp|i[11] ; lab5:ilab5|lcddisp:ilcddisp|j[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 4.152      ;
+; -3.123 ; lab5:ilab5|lcddisp:ilcddisp|i[0]  ; lab5:ilab5|lcddisp:ilcddisp|j[20] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 4.151      ;
++--------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'CLOCK_50'                                                                                                                            ;
++-------+------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                          ; To Node                             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; lab5:ilab5|lcddisp:ilcddisp|lcd_e  ; lab5:ilab5|lcddisp:ilcddisp|lcd_e   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; lab5:ilab5|mfsm:imfsm|state.WAY1   ; lab5:ilab5|mfsm:imfsm|state.WAY1    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; lab5:ilab5|mfsm:imfsm|cntdwn[0]    ; lab5:ilab5|mfsm:imfsm|cntdwn[0]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; lab5:ilab5|afsm:iafsm|cntdwn[1]    ; lab5:ilab5|afsm:iafsm|cntdwn[1]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; lab5:ilab5|afsm:iafsm|cntdwn[2]    ; lab5:ilab5|afsm:iafsm|cntdwn[2]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; lab5:ilab5|afsm:iafsm|cntdwn[0]    ; lab5:ilab5|afsm:iafsm|cntdwn[0]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; lab5:ilab5|afsm:iafsm|cntdwn[3]    ; lab5:ilab5|afsm:iafsm|cntdwn[3]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.236 ; lab5:ilab5|lcddisp:ilcddisp|j[31]  ; lab5:ilab5|lcddisp:ilcddisp|j[31]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.388      ;
+; 0.241 ; lab5:ilab5|lcddisp:ilcddisp|i[31]  ; lab5:ilab5|lcddisp:ilcddisp|i[31]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.393      ;
+; 0.358 ; lab5:ilab5|lcddisp:ilcddisp|i[4]   ; lab5:ilab5|lcddisp:ilcddisp|i[4]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358 ; lab5:ilab5|lcddisp:ilcddisp|i[11]  ; lab5:ilab5|lcddisp:ilcddisp|i[11]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358 ; lab5:ilab5|lcddisp:ilcddisp|i[30]  ; lab5:ilab5|lcddisp:ilcddisp|i[30]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358 ; lab5:ilab5|secgen:isecgen|temp[13] ; lab5:ilab5|secgen:isecgen|temp[13]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358 ; lab5:ilab5|secgen:isecgen|temp[24] ; lab5:ilab5|secgen:isecgen|temp[24]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.510      ;
+; 0.359 ; lab5:ilab5|lcddisp:ilcddisp|i[20]  ; lab5:ilab5|lcddisp:ilcddisp|i[20]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.511      ;
+; 0.360 ; lab5:ilab5|lcddisp:ilcddisp|i[16]  ; lab5:ilab5|lcddisp:ilcddisp|i[16]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.512      ;
+; 0.360 ; lab5:ilab5|secgen:isecgen|temp[6]  ; lab5:ilab5|secgen:isecgen|temp[6]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.512      ;
+; 0.360 ; lab5:ilab5|secgen:isecgen|temp[8]  ; lab5:ilab5|secgen:isecgen|temp[8]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.512      ;
+; 0.361 ; lab5:ilab5|lcddisp:ilcddisp|i[7]   ; lab5:ilab5|lcddisp:ilcddisp|i[7]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; lab5:ilab5|lcddisp:ilcddisp|i[9]   ; lab5:ilab5|lcddisp:ilcddisp|i[9]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; lab5:ilab5|lcddisp:ilcddisp|i[14]  ; lab5:ilab5|lcddisp:ilcddisp|i[14]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; lab5:ilab5|lcddisp:ilcddisp|i[15]  ; lab5:ilab5|lcddisp:ilcddisp|i[15]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.513      ;
+; 0.363 ; lab5:ilab5|secgen:isecgen|temp[4]  ; lab5:ilab5|secgen:isecgen|temp[4]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.515      ;
+; 0.364 ; lab5:ilab5|secgen:isecgen|temp[1]  ; lab5:ilab5|secgen:isecgen|temp[1]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.516      ;
+; 0.365 ; lab5:ilab5|secgen:isecgen|temp[10] ; lab5:ilab5|secgen:isecgen|temp[10]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.517      ;
+; 0.365 ; lab5:ilab5|secgen:isecgen|temp[11] ; lab5:ilab5|secgen:isecgen|temp[11]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.517      ;
+; 0.365 ; lab5:ilab5|secgen:isecgen|temp[12] ; lab5:ilab5|secgen:isecgen|temp[12]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.517      ;
+; 0.367 ; lab5:ilab5|lcddisp:ilcddisp|i[28]  ; lab5:ilab5|lcddisp:ilcddisp|i[28]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.519      ;
+; 0.369 ; lab5:ilab5|lcddisp:ilcddisp|i[21]  ; lab5:ilab5|lcddisp:ilcddisp|i[21]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.521      ;
+; 0.369 ; lab5:ilab5|lcddisp:ilcddisp|i[22]  ; lab5:ilab5|lcddisp:ilcddisp|i[22]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.521      ;
+; 0.370 ; lab5:ilab5|secgen:isecgen|temp[16] ; lab5:ilab5|secgen:isecgen|temp[16]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.522      ;
+; 0.371 ; lab5:ilab5|lcddisp:ilcddisp|i[10]  ; lab5:ilab5|lcddisp:ilcddisp|i[10]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.523      ;
+; 0.372 ; lab5:ilab5|lcddisp:ilcddisp|i[5]   ; lab5:ilab5|lcddisp:ilcddisp|i[5]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.524      ;
+; 0.372 ; lab5:ilab5|lcddisp:ilcddisp|i[6]   ; lab5:ilab5|lcddisp:ilcddisp|i[6]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.524      ;
+; 0.372 ; lab5:ilab5|lcddisp:ilcddisp|i[12]  ; lab5:ilab5|lcddisp:ilcddisp|i[12]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.524      ;
+; 0.374 ; lab5:ilab5|lcddisp:ilcddisp|i[8]   ; lab5:ilab5|lcddisp:ilcddisp|i[8]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.526      ;
+; 0.374 ; lab5:ilab5|afsm:iafsm|cntdwn[0]    ; lab5:ilab5|afsm:iafsm|cntdwn[1]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.526      ;
+; 0.376 ; lab5:ilab5|secgen:isecgen|temp[2]  ; lab5:ilab5|secgen:isecgen|temp[2]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.528      ;
+; 0.376 ; lab5:ilab5|secgen:isecgen|temp[3]  ; lab5:ilab5|secgen:isecgen|temp[3]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.528      ;
+; 0.376 ; lab5:ilab5|secgen:isecgen|temp[5]  ; lab5:ilab5|secgen:isecgen|temp[5]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.528      ;
+; 0.376 ; lab5:ilab5|secgen:isecgen|temp[0]  ; lab5:ilab5|secgen:isecgen|temp[0]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.528      ;
+; 0.378 ; lab5:ilab5|secgen:isecgen|temp[7]  ; lab5:ilab5|secgen:isecgen|temp[7]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.530      ;
+; 0.378 ; lab5:ilab5|secgen:isecgen|temp[9]  ; lab5:ilab5|secgen:isecgen|temp[9]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.530      ;
+; 0.382 ; lab5:ilab5|mfsm:imfsm|state.WAY2   ; lab5:ilab5|mfsm:imfsm|state.CHR2    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.534      ;
+; 0.389 ; lab5:ilab5|mfsm:imfsm|state.WAY1   ; lab5:ilab5|mfsm:imfsm|state.CHR1    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.541      ;
+; 0.416 ; lab5:ilab5|afsm:iafsm|state.CHR1   ; lab5:ilab5|afsm:iafsm|state.WAY2    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.568      ;
+; 0.419 ; lab5:ilab5|afsm:iafsm|state.WAY1   ; lab5:ilab5|afsm:iafsm|state.CHR1    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.571      ;
+; 0.423 ; lab5:ilab5|lcddisp:ilcddisp|j[4]   ; lab5:ilab5|lcddisp:ilcddisp|data[0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.575      ;
+; 0.423 ; lab5:ilab5|afsm:iafsm|state.WAY2   ; lab5:ilab5|afsm:iafsm|state.CHR2    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.575      ;
+; 0.437 ; lab5:ilab5|secgen:isecgen|temp[23] ; lab5:ilab5|secgen:isecgen|temp[23]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.589      ;
+; 0.438 ; lab5:ilab5|secgen:isecgen|temp[19] ; lab5:ilab5|secgen:isecgen|temp[19]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.590      ;
+; 0.440 ; lab5:ilab5|secgen:isecgen|temp[18] ; lab5:ilab5|secgen:isecgen|temp[18]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.592      ;
+; 0.440 ; lab5:ilab5|secgen:isecgen|temp[21] ; lab5:ilab5|secgen:isecgen|temp[21]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.592      ;
+; 0.448 ; lab5:ilab5|secgen:isecgen|temp[15] ; lab5:ilab5|secgen:isecgen|temp[15]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.600      ;
+; 0.448 ; lab5:ilab5|secgen:isecgen|temp[17] ; lab5:ilab5|secgen:isecgen|temp[17]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.600      ;
+; 0.451 ; lab5:ilab5|secgen:isecgen|temp[22] ; lab5:ilab5|secgen:isecgen|temp[22]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.603      ;
+; 0.478 ; lab5:ilab5|afsm:iafsm|state.WAY1   ; lab5:ilab5|afsm:iafsm|state.WAY1    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.630      ;
+; 0.496 ; lab5:ilab5|secgen:isecgen|temp[24] ; lab5:ilab5|secgen:isecgen|temp[25]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.648      ;
+; 0.496 ; lab5:ilab5|lcddisp:ilcddisp|i[30]  ; lab5:ilab5|lcddisp:ilcddisp|i[31]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.648      ;
+; 0.496 ; lab5:ilab5|lcddisp:ilcddisp|i[4]   ; lab5:ilab5|lcddisp:ilcddisp|i[5]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.648      ;
+; 0.496 ; lab5:ilab5|lcddisp:ilcddisp|i[11]  ; lab5:ilab5|lcddisp:ilcddisp|i[12]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.648      ;
+; 0.497 ; lab5:ilab5|lcddisp:ilcddisp|i[20]  ; lab5:ilab5|lcddisp:ilcddisp|i[21]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.649      ;
+; 0.498 ; lab5:ilab5|secgen:isecgen|temp[6]  ; lab5:ilab5|secgen:isecgen|temp[7]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.650      ;
+; 0.498 ; lab5:ilab5|secgen:isecgen|temp[8]  ; lab5:ilab5|secgen:isecgen|temp[9]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.650      ;
+; 0.499 ; lab5:ilab5|lcddisp:ilcddisp|i[14]  ; lab5:ilab5|lcddisp:ilcddisp|i[15]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.651      ;
+; 0.499 ; lab5:ilab5|lcddisp:ilcddisp|i[9]   ; lab5:ilab5|lcddisp:ilcddisp|i[10]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.651      ;
+; 0.502 ; lab5:ilab5|secgen:isecgen|temp[1]  ; lab5:ilab5|secgen:isecgen|temp[2]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.654      ;
+; 0.503 ; lab5:ilab5|secgen:isecgen|temp[10] ; lab5:ilab5|secgen:isecgen|temp[11]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.655      ;
+; 0.503 ; lab5:ilab5|secgen:isecgen|temp[11] ; lab5:ilab5|secgen:isecgen|temp[12]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.655      ;
+; 0.509 ; lab5:ilab5|lcddisp:ilcddisp|i[21]  ; lab5:ilab5|lcddisp:ilcddisp|i[22]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.661      ;
+; 0.510 ; lab5:ilab5|secgen:isecgen|temp[16] ; lab5:ilab5|secgen:isecgen|temp[17]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.662      ;
+; 0.511 ; lab5:ilab5|lcddisp:ilcddisp|i[10]  ; lab5:ilab5|lcddisp:ilcddisp|i[11]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.663      ;
+; 0.512 ; lab5:ilab5|lcddisp:ilcddisp|i[6]   ; lab5:ilab5|lcddisp:ilcddisp|i[7]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.664      ;
+; 0.512 ; lab5:ilab5|lcddisp:ilcddisp|i[5]   ; lab5:ilab5|lcddisp:ilcddisp|i[6]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.664      ;
+; 0.514 ; lab5:ilab5|lcddisp:ilcddisp|i[8]   ; lab5:ilab5|lcddisp:ilcddisp|i[9]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.666      ;
+; 0.516 ; lab5:ilab5|secgen:isecgen|temp[5]  ; lab5:ilab5|secgen:isecgen|temp[6]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.668      ;
+; 0.516 ; lab5:ilab5|secgen:isecgen|temp[3]  ; lab5:ilab5|secgen:isecgen|temp[4]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.668      ;
+; 0.516 ; lab5:ilab5|secgen:isecgen|temp[0]  ; lab5:ilab5|secgen:isecgen|temp[1]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.668      ;
+; 0.516 ; lab5:ilab5|secgen:isecgen|temp[2]  ; lab5:ilab5|secgen:isecgen|temp[3]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.668      ;
+; 0.518 ; lab5:ilab5|secgen:isecgen|temp[7]  ; lab5:ilab5|secgen:isecgen|temp[8]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.670      ;
+; 0.518 ; lab5:ilab5|secgen:isecgen|temp[9]  ; lab5:ilab5|secgen:isecgen|temp[10]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.670      ;
+; 0.529 ; lab5:ilab5|lcddisp:ilcddisp|lcd_rs ; lab5:ilab5|lcddisp:ilcddisp|lcd_rs  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.681      ;
+; 0.531 ; lab5:ilab5|secgen:isecgen|temp[13] ; lab5:ilab5|secgen:isecgen|temp[15]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.683      ;
+; 0.531 ; lab5:ilab5|lcddisp:ilcddisp|i[4]   ; lab5:ilab5|lcddisp:ilcddisp|i[6]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.683      ;
+; 0.532 ; lab5:ilab5|lcddisp:ilcddisp|i[20]  ; lab5:ilab5|lcddisp:ilcddisp|i[22]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.684      ;
+; 0.533 ; lab5:ilab5|secgen:isecgen|temp[6]  ; lab5:ilab5|secgen:isecgen|temp[8]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.685      ;
+; 0.533 ; lab5:ilab5|secgen:isecgen|temp[8]  ; lab5:ilab5|secgen:isecgen|temp[10]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.685      ;
+; 0.534 ; lab5:ilab5|lcddisp:ilcddisp|i[9]   ; lab5:ilab5|lcddisp:ilcddisp|i[11]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.686      ;
+; 0.537 ; lab5:ilab5|secgen:isecgen|temp[1]  ; lab5:ilab5|secgen:isecgen|temp[3]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.689      ;
+; 0.538 ; lab5:ilab5|secgen:isecgen|temp[10] ; lab5:ilab5|secgen:isecgen|temp[12]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.690      ;
+; 0.541 ; lab5:ilab5|mfsm:imfsm|cntdwn[1]    ; lab5:ilab5|mfsm:imfsm|cntdwn[1]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.693      ;
+; 0.541 ; lab5:ilab5|secgen:isecgen|temp[12] ; lab5:ilab5|secgen:isecgen|temp[13]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.009      ; 0.702      ;
+; 0.542 ; lab5:ilab5|lcddisp:ilcddisp|i[28]  ; lab5:ilab5|lcddisp:ilcddisp|i[30]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.694      ;
+; 0.542 ; lab5:ilab5|lcddisp:ilcddisp|i[15]  ; lab5:ilab5|lcddisp:ilcddisp|i[16]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.004      ; 0.698      ;
+; 0.545 ; lab5:ilab5|secgen:isecgen|temp[16] ; lab5:ilab5|secgen:isecgen|temp[18]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.697      ;
+; 0.546 ; lab5:ilab5|lcddisp:ilcddisp|i[10]  ; lab5:ilab5|lcddisp:ilcddisp|i[12]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.698      ;
+; 0.547 ; lab5:ilab5|lcddisp:ilcddisp|i[12]  ; lab5:ilab5|lcddisp:ilcddisp|i[14]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.699      ;
+; 0.547 ; lab5:ilab5|lcddisp:ilcddisp|i[5]   ; lab5:ilab5|lcddisp:ilcddisp|i[7]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.699      ;
+; 0.549 ; lab5:ilab5|lcddisp:ilcddisp|i[8]   ; lab5:ilab5|lcddisp:ilcddisp|i[10]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.701      ;
+; 0.550 ; lab5:ilab5|mfsm:imfsm|state.CHR2   ; lab5:ilab5|mfsm:imfsm|state.WAY1    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.702      ;
++-------+------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'CLOCK_50'                                                                              ;
++--------+--------------+----------------+------------------+----------+------------+-------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                              ;
++--------+--------------+----------------+------------------+----------+------------+-------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; CLOCK_50 ; Rise       ; CLOCK_50                            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|afsm:iafsm|cntdwn[0]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|afsm:iafsm|cntdwn[0]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|afsm:iafsm|cntdwn[1]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|afsm:iafsm|cntdwn[1]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|afsm:iafsm|cntdwn[2]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|afsm:iafsm|cntdwn[2]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|afsm:iafsm|cntdwn[3]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|afsm:iafsm|cntdwn[3]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|afsm:iafsm|state.CHR1    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|afsm:iafsm|state.CHR1    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|afsm:iafsm|state.CHR2    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|afsm:iafsm|state.CHR2    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|afsm:iafsm|state.WAY1    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|afsm:iafsm|state.WAY1    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|afsm:iafsm|state.WAY2    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|afsm:iafsm|state.WAY2    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|data[0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|data[0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|data[1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|data[1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|data[2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|data[2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|data[3] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|data[3] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|data[4] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|data[4] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|data[5] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|data[5] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|data[6] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|data[6] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|data[7] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|data[7] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[10]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[10]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[11]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[11]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[12]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[12]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[13]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[13]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[14]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[14]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[15]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[15]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[16]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[16]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[17]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[17]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[18]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[18]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[19]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[19]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[1]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[1]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[20]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[20]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[21]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[21]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[22]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[22]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[23]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[23]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[24]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[24]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[25]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[25]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[26]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[26]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[27]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[27]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[28]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[28]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[29]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[29]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[2]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[2]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[30]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[30]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[31]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[31]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[3]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[3]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[4]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[4]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[5]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[5]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[6]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[6]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[7]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[7]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[8]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[8]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[9]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|i[9]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|j[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|j[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; lab5:ilab5|lcddisp:ilcddisp|j[10]   ;
++--------+--------------+----------------+------------------+----------+------------+-------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; KEY[*]    ; CLOCK_50   ; 2.711  ; 2.711  ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; 2.711  ; 2.711  ; Rise       ; CLOCK_50        ;
+; SW[*]     ; CLOCK_50   ; -0.140 ; -0.140 ; Rise       ; CLOCK_50        ;
+;  SW[1]    ; CLOCK_50   ; -0.140 ; -0.140 ; Rise       ; CLOCK_50        ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; KEY[*]    ; CLOCK_50   ; -1.782 ; -1.782 ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; -1.782 ; -1.782 ; Rise       ; CLOCK_50        ;
+; SW[*]     ; CLOCK_50   ; 0.557  ; 0.557  ; Rise       ; CLOCK_50        ;
+;  SW[1]    ; CLOCK_50   ; 0.557  ; 0.557  ; Rise       ; CLOCK_50        ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Clock to Output Times                                                    ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; GPIO_0[*]    ; CLOCK_50   ; 5.341 ; 5.341 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[0]   ; CLOCK_50   ; 4.343 ; 4.343 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[1]   ; CLOCK_50   ; 4.084 ; 4.084 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[2]   ; CLOCK_50   ; 3.968 ; 3.968 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[3]   ; CLOCK_50   ; 5.204 ; 5.204 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[4]   ; CLOCK_50   ; 4.970 ; 4.970 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[5]   ; CLOCK_50   ; 5.114 ; 5.114 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[6]   ; CLOCK_50   ; 4.992 ; 4.992 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[7]   ; CLOCK_50   ; 4.890 ; 4.890 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[8]   ; CLOCK_50   ; 5.077 ; 5.077 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[9]   ; CLOCK_50   ; 4.999 ; 4.999 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[10]  ; CLOCK_50   ; 4.438 ; 4.438 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[11]  ; CLOCK_50   ; 4.144 ; 4.144 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[12]  ; CLOCK_50   ; 3.938 ; 3.938 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[13]  ; CLOCK_50   ; 5.259 ; 5.259 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[14]  ; CLOCK_50   ; 4.907 ; 4.907 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[15]  ; CLOCK_50   ; 5.078 ; 5.078 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[16]  ; CLOCK_50   ; 5.341 ; 5.341 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[17]  ; CLOCK_50   ; 5.261 ; 5.261 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[18]  ; CLOCK_50   ; 4.954 ; 4.954 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[19]  ; CLOCK_50   ; 5.116 ; 5.116 ; Rise       ; CLOCK_50        ;
+; LCD_DATA[*]  ; CLOCK_50   ; 3.866 ; 3.866 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[0] ; CLOCK_50   ; 3.866 ; 3.866 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[1] ; CLOCK_50   ; 3.801 ; 3.801 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[2] ; CLOCK_50   ; 3.828 ; 3.828 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[3] ; CLOCK_50   ; 3.774 ; 3.774 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[4] ; CLOCK_50   ; 3.804 ; 3.804 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[5] ; CLOCK_50   ; 3.797 ; 3.797 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[6] ; CLOCK_50   ; 3.796 ; 3.796 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[7] ; CLOCK_50   ; 3.812 ; 3.812 ; Rise       ; CLOCK_50        ;
+; LCD_EN       ; CLOCK_50   ; 3.788 ; 3.788 ; Rise       ; CLOCK_50        ;
+; LCD_RS       ; CLOCK_50   ; 3.977 ; 3.977 ; Rise       ; CLOCK_50        ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                            ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; GPIO_0[*]    ; CLOCK_50   ; 3.863 ; 3.863 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[0]   ; CLOCK_50   ; 3.863 ; 3.863 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[1]   ; CLOCK_50   ; 4.043 ; 4.043 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[2]   ; CLOCK_50   ; 3.940 ; 3.940 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[3]   ; CLOCK_50   ; 4.219 ; 4.219 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[4]   ; CLOCK_50   ; 3.987 ; 3.987 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[5]   ; CLOCK_50   ; 4.182 ; 4.182 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[6]   ; CLOCK_50   ; 4.186 ; 4.186 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[7]   ; CLOCK_50   ; 4.020 ; 4.020 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[8]   ; CLOCK_50   ; 4.614 ; 4.614 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[9]   ; CLOCK_50   ; 4.215 ; 4.215 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[10]  ; CLOCK_50   ; 3.962 ; 3.962 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[11]  ; CLOCK_50   ; 3.948 ; 3.948 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[12]  ; CLOCK_50   ; 3.915 ; 3.915 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[13]  ; CLOCK_50   ; 4.343 ; 4.343 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[14]  ; CLOCK_50   ; 4.161 ; 4.161 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[15]  ; CLOCK_50   ; 4.201 ; 4.201 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[16]  ; CLOCK_50   ; 4.620 ; 4.620 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[17]  ; CLOCK_50   ; 4.337 ; 4.337 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[18]  ; CLOCK_50   ; 4.382 ; 4.382 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[19]  ; CLOCK_50   ; 4.396 ; 4.396 ; Rise       ; CLOCK_50        ;
+; LCD_DATA[*]  ; CLOCK_50   ; 3.774 ; 3.774 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[0] ; CLOCK_50   ; 3.866 ; 3.866 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[1] ; CLOCK_50   ; 3.801 ; 3.801 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[2] ; CLOCK_50   ; 3.828 ; 3.828 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[3] ; CLOCK_50   ; 3.774 ; 3.774 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[4] ; CLOCK_50   ; 3.804 ; 3.804 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[5] ; CLOCK_50   ; 3.797 ; 3.797 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[6] ; CLOCK_50   ; 3.796 ; 3.796 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[7] ; CLOCK_50   ; 3.812 ; 3.812 ; Rise       ; CLOCK_50        ;
+; LCD_EN       ; CLOCK_50   ; 3.788 ; 3.788 ; Rise       ; CLOCK_50        ;
+; LCD_RS       ; CLOCK_50   ; 3.977 ; 3.977 ; Rise       ; CLOCK_50        ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------+
+; Propagation Delay                                        ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; SW[0]      ; GPIO_0[0]   ; 3.071 ; 3.348 ; 3.348 ; 3.071 ;
+; SW[0]      ; GPIO_0[1]   ; 3.149 ; 3.149 ; 3.149 ; 3.149 ;
+; SW[0]      ; GPIO_0[2]   ; 3.057 ; 3.057 ; 3.057 ; 3.057 ;
+; SW[0]      ; GPIO_0[3]   ; 3.404 ; 3.404 ; 3.404 ; 3.404 ;
+; SW[0]      ; GPIO_0[4]   ; 3.168 ; 3.168 ; 3.168 ; 3.168 ;
+; SW[0]      ; GPIO_0[5]   ; 3.093 ; 3.093 ; 3.093 ; 3.093 ;
+; SW[0]      ; GPIO_0[6]   ; 3.091 ; 3.355 ; 3.355 ; 3.091 ;
+; SW[0]      ; GPIO_0[7]   ; 3.198 ; 3.198 ; 3.198 ; 3.198 ;
+; SW[0]      ; GPIO_0[8]   ; 3.346 ;       ;       ; 3.346 ;
+; SW[0]      ; GPIO_0[9]   ; 3.122 ; 3.384 ; 3.384 ; 3.122 ;
+; SW[0]      ; GPIO_0[10]  ; 3.167 ; 3.521 ; 3.521 ; 3.167 ;
+; SW[0]      ; GPIO_0[11]  ; 3.151 ; 3.151 ; 3.151 ; 3.151 ;
+; SW[0]      ; GPIO_0[12]  ; 3.150 ; 3.150 ; 3.150 ; 3.150 ;
+; SW[0]      ; GPIO_0[13]  ; 3.240 ; 3.240 ; 3.240 ; 3.240 ;
+; SW[0]      ; GPIO_0[14]  ; 3.148 ; 3.148 ; 3.148 ; 3.148 ;
+; SW[0]      ; GPIO_0[15]  ; 3.252 ; 3.252 ; 3.252 ; 3.252 ;
+; SW[0]      ; GPIO_0[16]  ; 3.301 ; 3.675 ; 3.675 ; 3.301 ;
+; SW[0]      ; GPIO_0[17]  ; 3.139 ; 3.139 ; 3.139 ; 3.139 ;
+; SW[0]      ; GPIO_0[18]  ; 3.084 ;       ;       ; 3.084 ;
+; SW[0]      ; GPIO_0[19]  ; 3.081 ; 3.451 ; 3.451 ; 3.081 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++----------------------------------------------------------+
+; Minimum Propagation Delay                                ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; SW[0]      ; GPIO_0[0]   ; 3.071 ; 3.348 ; 3.348 ; 3.071 ;
+; SW[0]      ; GPIO_0[1]   ; 3.149 ; 3.149 ; 3.149 ; 3.149 ;
+; SW[0]      ; GPIO_0[2]   ; 3.057 ; 3.057 ; 3.057 ; 3.057 ;
+; SW[0]      ; GPIO_0[3]   ; 3.404 ; 3.404 ; 3.404 ; 3.404 ;
+; SW[0]      ; GPIO_0[4]   ; 3.168 ; 3.168 ; 3.168 ; 3.168 ;
+; SW[0]      ; GPIO_0[5]   ; 3.093 ; 3.093 ; 3.093 ; 3.093 ;
+; SW[0]      ; GPIO_0[6]   ; 3.091 ; 3.355 ; 3.355 ; 3.091 ;
+; SW[0]      ; GPIO_0[7]   ; 3.198 ; 3.198 ; 3.198 ; 3.198 ;
+; SW[0]      ; GPIO_0[8]   ; 3.346 ;       ;       ; 3.346 ;
+; SW[0]      ; GPIO_0[9]   ; 3.122 ; 3.384 ; 3.384 ; 3.122 ;
+; SW[0]      ; GPIO_0[10]  ; 3.167 ; 3.521 ; 3.521 ; 3.167 ;
+; SW[0]      ; GPIO_0[11]  ; 3.151 ; 3.151 ; 3.151 ; 3.151 ;
+; SW[0]      ; GPIO_0[12]  ; 3.150 ; 3.150 ; 3.150 ; 3.150 ;
+; SW[0]      ; GPIO_0[13]  ; 3.240 ; 3.240 ; 3.240 ; 3.240 ;
+; SW[0]      ; GPIO_0[14]  ; 3.148 ; 3.148 ; 3.148 ; 3.148 ;
+; SW[0]      ; GPIO_0[15]  ; 3.252 ; 3.252 ; 3.252 ; 3.252 ;
+; SW[0]      ; GPIO_0[16]  ; 3.301 ; 3.675 ; 3.675 ; 3.301 ;
+; SW[0]      ; GPIO_0[17]  ; 3.139 ; 3.139 ; 3.139 ; 3.139 ;
+; SW[0]      ; GPIO_0[18]  ; 3.084 ;       ;       ; 3.084 ;
+; SW[0]      ; GPIO_0[19]  ; 3.081 ; 3.451 ; 3.451 ; 3.081 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++--------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                            ;
++------------------+----------+-------+----------+---------+---------------------+
+; Clock            ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+----------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -8.373   ; 0.215 ; N/A      ; N/A     ; -1.380              ;
+;  CLOCK_50        ; -8.373   ; 0.215 ; N/A      ; N/A     ; -1.380              ;
+; Design-wide TNS  ; -519.674 ; 0.0   ; 0.0      ; 0.0     ; -115.38             ;
+;  CLOCK_50        ; -519.674 ; 0.000 ; N/A      ; N/A     ; -115.380            ;
++------------------+----------+-------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; KEY[*]    ; CLOCK_50   ; 5.174 ; 5.174 ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; 5.174 ; 5.174 ; Rise       ; CLOCK_50        ;
+; SW[*]     ; CLOCK_50   ; 0.506 ; 0.506 ; Rise       ; CLOCK_50        ;
+;  SW[1]    ; CLOCK_50   ; 0.506 ; 0.506 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; KEY[*]    ; CLOCK_50   ; -1.782 ; -1.782 ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; -1.782 ; -1.782 ; Rise       ; CLOCK_50        ;
+; SW[*]     ; CLOCK_50   ; 0.557  ; 0.557  ; Rise       ; CLOCK_50        ;
+;  SW[1]    ; CLOCK_50   ; 0.557  ; 0.557  ; Rise       ; CLOCK_50        ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Clock to Output Times                                                      ;
++--------------+------------+--------+--------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------+------------+--------+--------+------------+-----------------+
+; GPIO_0[*]    ; CLOCK_50   ; 10.229 ; 10.229 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[0]   ; CLOCK_50   ; 7.989  ; 7.989  ; Rise       ; CLOCK_50        ;
+;  GPIO_0[1]   ; CLOCK_50   ; 7.382  ; 7.382  ; Rise       ; CLOCK_50        ;
+;  GPIO_0[2]   ; CLOCK_50   ; 7.119  ; 7.119  ; Rise       ; CLOCK_50        ;
+;  GPIO_0[3]   ; CLOCK_50   ; 9.884  ; 9.884  ; Rise       ; CLOCK_50        ;
+;  GPIO_0[4]   ; CLOCK_50   ; 9.436  ; 9.436  ; Rise       ; CLOCK_50        ;
+;  GPIO_0[5]   ; CLOCK_50   ; 9.719  ; 9.719  ; Rise       ; CLOCK_50        ;
+;  GPIO_0[6]   ; CLOCK_50   ; 9.480  ; 9.480  ; Rise       ; CLOCK_50        ;
+;  GPIO_0[7]   ; CLOCK_50   ; 9.197  ; 9.197  ; Rise       ; CLOCK_50        ;
+;  GPIO_0[8]   ; CLOCK_50   ; 9.629  ; 9.629  ; Rise       ; CLOCK_50        ;
+;  GPIO_0[9]   ; CLOCK_50   ; 9.458  ; 9.458  ; Rise       ; CLOCK_50        ;
+;  GPIO_0[10]  ; CLOCK_50   ; 8.186  ; 8.186  ; Rise       ; CLOCK_50        ;
+;  GPIO_0[11]  ; CLOCK_50   ; 7.515  ; 7.515  ; Rise       ; CLOCK_50        ;
+;  GPIO_0[12]  ; CLOCK_50   ; 7.022  ; 7.022  ; Rise       ; CLOCK_50        ;
+;  GPIO_0[13]  ; CLOCK_50   ; 10.102 ; 10.102 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[14]  ; CLOCK_50   ; 9.273  ; 9.273  ; Rise       ; CLOCK_50        ;
+;  GPIO_0[15]  ; CLOCK_50   ; 9.660  ; 9.660  ; Rise       ; CLOCK_50        ;
+;  GPIO_0[16]  ; CLOCK_50   ; 10.229 ; 10.229 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[17]  ; CLOCK_50   ; 10.024 ; 10.024 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[18]  ; CLOCK_50   ; 9.407  ; 9.407  ; Rise       ; CLOCK_50        ;
+;  GPIO_0[19]  ; CLOCK_50   ; 9.757  ; 9.757  ; Rise       ; CLOCK_50        ;
+; LCD_DATA[*]  ; CLOCK_50   ; 6.902  ; 6.902  ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[0] ; CLOCK_50   ; 6.902  ; 6.902  ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[1] ; CLOCK_50   ; 6.703  ; 6.703  ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[2] ; CLOCK_50   ; 6.759  ; 6.759  ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[3] ; CLOCK_50   ; 6.711  ; 6.711  ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[4] ; CLOCK_50   ; 6.709  ; 6.709  ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[5] ; CLOCK_50   ; 6.693  ; 6.693  ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[6] ; CLOCK_50   ; 6.692  ; 6.692  ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[7] ; CLOCK_50   ; 6.721  ; 6.721  ; Rise       ; CLOCK_50        ;
+; LCD_EN       ; CLOCK_50   ; 6.729  ; 6.729  ; Rise       ; CLOCK_50        ;
+; LCD_RS       ; CLOCK_50   ; 7.045  ; 7.045  ; Rise       ; CLOCK_50        ;
++--------------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                            ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; GPIO_0[*]    ; CLOCK_50   ; 3.863 ; 3.863 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[0]   ; CLOCK_50   ; 3.863 ; 3.863 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[1]   ; CLOCK_50   ; 4.043 ; 4.043 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[2]   ; CLOCK_50   ; 3.940 ; 3.940 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[3]   ; CLOCK_50   ; 4.219 ; 4.219 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[4]   ; CLOCK_50   ; 3.987 ; 3.987 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[5]   ; CLOCK_50   ; 4.182 ; 4.182 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[6]   ; CLOCK_50   ; 4.186 ; 4.186 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[7]   ; CLOCK_50   ; 4.020 ; 4.020 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[8]   ; CLOCK_50   ; 4.614 ; 4.614 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[9]   ; CLOCK_50   ; 4.215 ; 4.215 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[10]  ; CLOCK_50   ; 3.962 ; 3.962 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[11]  ; CLOCK_50   ; 3.948 ; 3.948 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[12]  ; CLOCK_50   ; 3.915 ; 3.915 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[13]  ; CLOCK_50   ; 4.343 ; 4.343 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[14]  ; CLOCK_50   ; 4.161 ; 4.161 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[15]  ; CLOCK_50   ; 4.201 ; 4.201 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[16]  ; CLOCK_50   ; 4.620 ; 4.620 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[17]  ; CLOCK_50   ; 4.337 ; 4.337 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[18]  ; CLOCK_50   ; 4.382 ; 4.382 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[19]  ; CLOCK_50   ; 4.396 ; 4.396 ; Rise       ; CLOCK_50        ;
+; LCD_DATA[*]  ; CLOCK_50   ; 3.774 ; 3.774 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[0] ; CLOCK_50   ; 3.866 ; 3.866 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[1] ; CLOCK_50   ; 3.801 ; 3.801 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[2] ; CLOCK_50   ; 3.828 ; 3.828 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[3] ; CLOCK_50   ; 3.774 ; 3.774 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[4] ; CLOCK_50   ; 3.804 ; 3.804 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[5] ; CLOCK_50   ; 3.797 ; 3.797 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[6] ; CLOCK_50   ; 3.796 ; 3.796 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[7] ; CLOCK_50   ; 3.812 ; 3.812 ; Rise       ; CLOCK_50        ;
+; LCD_EN       ; CLOCK_50   ; 3.788 ; 3.788 ; Rise       ; CLOCK_50        ;
+; LCD_RS       ; CLOCK_50   ; 3.977 ; 3.977 ; Rise       ; CLOCK_50        ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------+
+; Progagation Delay                                        ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; SW[0]      ; GPIO_0[0]   ; 5.888 ; 6.552 ; 6.552 ; 5.888 ;
+; SW[0]      ; GPIO_0[1]   ; 6.098 ; 6.098 ; 6.098 ; 6.098 ;
+; SW[0]      ; GPIO_0[2]   ; 5.884 ; 5.884 ; 5.884 ; 5.884 ;
+; SW[0]      ; GPIO_0[3]   ; 6.604 ; 6.604 ; 6.604 ; 6.604 ;
+; SW[0]      ; GPIO_0[4]   ; 6.118 ; 6.118 ; 6.118 ; 6.118 ;
+; SW[0]      ; GPIO_0[5]   ; 5.951 ; 5.951 ; 5.951 ; 5.951 ;
+; SW[0]      ; GPIO_0[6]   ; 5.946 ; 6.495 ; 6.495 ; 5.946 ;
+; SW[0]      ; GPIO_0[7]   ; 6.124 ; 6.124 ; 6.124 ; 6.124 ;
+; SW[0]      ; GPIO_0[8]   ; 6.427 ;       ;       ; 6.427 ;
+; SW[0]      ; GPIO_0[9]   ; 5.976 ; 6.521 ; 6.521 ; 5.976 ;
+; SW[0]      ; GPIO_0[10]  ; 6.120 ; 6.953 ; 6.953 ; 6.120 ;
+; SW[0]      ; GPIO_0[11]  ; 6.099 ; 6.099 ; 6.099 ; 6.099 ;
+; SW[0]      ; GPIO_0[12]  ; 6.067 ; 6.067 ; 6.067 ; 6.067 ;
+; SW[0]      ; GPIO_0[13]  ; 6.310 ; 6.310 ; 6.310 ; 6.310 ;
+; SW[0]      ; GPIO_0[14]  ; 6.042 ; 6.042 ; 6.042 ; 6.042 ;
+; SW[0]      ; GPIO_0[15]  ; 6.285 ; 6.285 ; 6.285 ; 6.285 ;
+; SW[0]      ; GPIO_0[16]  ; 6.393 ; 7.198 ; 7.198 ; 6.393 ;
+; SW[0]      ; GPIO_0[17]  ; 6.039 ; 6.039 ; 6.039 ; 6.039 ;
+; SW[0]      ; GPIO_0[18]  ; 5.892 ;       ;       ; 5.892 ;
+; SW[0]      ; GPIO_0[19]  ; 5.925 ; 6.726 ; 6.726 ; 5.925 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++----------------------------------------------------------+
+; Minimum Progagation Delay                                ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; SW[0]      ; GPIO_0[0]   ; 3.071 ; 3.348 ; 3.348 ; 3.071 ;
+; SW[0]      ; GPIO_0[1]   ; 3.149 ; 3.149 ; 3.149 ; 3.149 ;
+; SW[0]      ; GPIO_0[2]   ; 3.057 ; 3.057 ; 3.057 ; 3.057 ;
+; SW[0]      ; GPIO_0[3]   ; 3.404 ; 3.404 ; 3.404 ; 3.404 ;
+; SW[0]      ; GPIO_0[4]   ; 3.168 ; 3.168 ; 3.168 ; 3.168 ;
+; SW[0]      ; GPIO_0[5]   ; 3.093 ; 3.093 ; 3.093 ; 3.093 ;
+; SW[0]      ; GPIO_0[6]   ; 3.091 ; 3.355 ; 3.355 ; 3.091 ;
+; SW[0]      ; GPIO_0[7]   ; 3.198 ; 3.198 ; 3.198 ; 3.198 ;
+; SW[0]      ; GPIO_0[8]   ; 3.346 ;       ;       ; 3.346 ;
+; SW[0]      ; GPIO_0[9]   ; 3.122 ; 3.384 ; 3.384 ; 3.122 ;
+; SW[0]      ; GPIO_0[10]  ; 3.167 ; 3.521 ; 3.521 ; 3.167 ;
+; SW[0]      ; GPIO_0[11]  ; 3.151 ; 3.151 ; 3.151 ; 3.151 ;
+; SW[0]      ; GPIO_0[12]  ; 3.150 ; 3.150 ; 3.150 ; 3.150 ;
+; SW[0]      ; GPIO_0[13]  ; 3.240 ; 3.240 ; 3.240 ; 3.240 ;
+; SW[0]      ; GPIO_0[14]  ; 3.148 ; 3.148 ; 3.148 ; 3.148 ;
+; SW[0]      ; GPIO_0[15]  ; 3.252 ; 3.252 ; 3.252 ; 3.252 ;
+; SW[0]      ; GPIO_0[16]  ; 3.301 ; 3.675 ; 3.675 ; 3.301 ;
+; SW[0]      ; GPIO_0[17]  ; 3.139 ; 3.139 ; 3.139 ; 3.139 ;
+; SW[0]      ; GPIO_0[18]  ; 3.084 ;       ;       ; 3.084 ;
+; SW[0]      ; GPIO_0[19]  ; 3.081 ; 3.451 ; 3.451 ; 3.081 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLOCK_50   ; CLOCK_50 ; 130302   ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLOCK_50   ; CLOCK_50 ; 130302   ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 3     ; 3    ;
+; Unconstrained Input Port Paths  ; 64    ; 64   ;
+; Unconstrained Output Ports      ; 30    ; 30   ;
+; Unconstrained Output Port Paths ; 148   ; 148  ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Fri Aug 12 02:23:31 2022
+Info: Command: quartus_sta lab5wr -c lab5wr
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'lab5wr.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name CLOCK_50 CLOCK_50
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -8.373
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -8.373      -519.674 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.391
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.391         0.000 CLOCK_50 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380      -115.380 CLOCK_50 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -3.190
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.190      -173.365 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 CLOCK_50 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380      -115.380 CLOCK_50 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4562 megabytes
+    Info: Processing ended: Fri Aug 12 02:23:33 2022
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

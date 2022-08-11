@@ -1,0 +1,159 @@
+m255
+K3
+13
+cModel Technology
+Z0 dK:\intelFPGA\TestTA21052022\mdsim
+vafsm
+Z1 DXx6 sv_std 3 std 0 22 F[19LRNL:5;XmIFh[XOPn1
+Z2 IzJHN57>h2KoNZ5XWCIG<H1
+Z3 V@6P0XIX6NS5I>[Ufg5blj2
+Z4 !s105 afsm_sv_unit
+S1
+Z5 dK:\Lab 5 sample\mdsim
+Z6 w1660252470
+Z7 8K:/Lab 5 sample/afsm.sv
+Z8 FK:/Lab 5 sample/afsm.sv
+L0 13
+Z9 OV;L;10.1d;51
+r1
+31
+Z10 !s90 -reportprogress|300|-work|work|-sv|K:/Lab 5 sample/afsm.sv|
+Z11 o-work work -sv -O0
+Z12 !s100 ANm:]DFQJE0OfLN_2@0Xa0
+Z13 !s108 1660252549.302000
+Z14 !s107 K:/Lab 5 sample/afsm.sv|
+!i10b 1
+!s85 0
+!s101 -O0
+vbcdcnv
+R1
+Z15 !s100 f_4a6lg8o0T3N1:ze[`z:3
+Z16 I3LMgkVnz`>>EGkK[Ae6]A2
+Z17 VYmSY2K0<OKZ7dN3dEzePH3
+Z18 !s105 bcdcnv_sv_unit
+S1
+R5
+Z19 w1660233208
+Z20 8K:/Lab 5 sample/bcdcnv.sv
+Z21 FK:/Lab 5 sample/bcdcnv.sv
+L0 13
+R9
+r1
+31
+Z22 !s90 -reportprogress|300|-work|work|-sv|K:/Lab 5 sample/bcdcnv.sv|
+R11
+Z23 !s108 1660252549.394000
+Z24 !s107 K:/Lab 5 sample/bcdcnv.sv|
+!i10b 1
+!s85 0
+!s101 -O0
+vlab5
+R1
+Z25 !s100 nTGjo?>Oa9l1JQn=9;Be?3
+Z26 I_KBGnCO]7<4X<OD8?go5K1
+Z27 V]YAh;7_Jb`n7<De@c;lbY3
+Z28 !s105 lab5_sv_unit
+S1
+R5
+R19
+Z29 8K:/Lab 5 sample/lab5.sv
+Z30 FK:/Lab 5 sample/lab5.sv
+L0 13
+R9
+r1
+31
+Z31 !s90 -reportprogress|300|-work|work|-sv|K:/Lab 5 sample/lab5.sv|
+R11
+Z32 !s108 1660252549.494000
+Z33 !s107 K:/Lab 5 sample/lab5.sv|
+!i10b 1
+!s85 0
+!s101 -O0
+vlab5_tb
+R1
+Z34 !s100 k>c=>7?O@`>4XE<F[e7Fo0
+Z35 I<Ull6OV;AQEYYgKWkW:OI1
+Z36 VS``Z9k04zE9ecM5aN=`>K2
+Z37 !s105 lab5_tb_sv_unit
+S1
+R5
+Z38 w1660251036
+Z39 8K:/Lab 5 sample/lab5_tb.sv
+Z40 FK:/Lab 5 sample/lab5_tb.sv
+L0 13
+R9
+r1
+31
+Z41 !s90 -reportprogress|300|-work|work|-sv|K:/Lab 5 sample/lab5_tb.sv|
+R11
+Z42 !s108 1660252549.612000
+Z43 !s107 K:/Lab 5 sample/lab5_tb.sv|
+!i10b 1
+!s85 0
+!s101 -O0
+vlcddisp
+R1
+Z44 !s100 =Pe0ckFSQA?89I=QEcAHS3
+Z45 I70Q^F6Q7GdLgGL2`gkaY23
+Z46 Vz?M@_AQ_b:g_<akz6VhKA1
+Z47 !s105 lcddisp_sv_unit
+S1
+R5
+Z48 w1660149101
+Z49 8K:/Lab 5 sample/lcddisp.sv
+Z50 FK:/Lab 5 sample/lcddisp.sv
+L0 13
+R9
+r1
+31
+Z51 !s90 -reportprogress|300|-work|work|-sv|K:/Lab 5 sample/lcddisp.sv|
+R11
+Z52 !s108 1660252549.718000
+Z53 !s107 K:/Lab 5 sample/lcddisp.sv|
+!i10b 1
+!s85 0
+!s101 -O0
+vmfsm
+R1
+Z54 !s100 zgUSkOVICaoF8Kl6NR6n01
+Z55 Iz6g:CXQ^M9V9gnDTTGWLF2
+Z56 Ve:a2TA@8jh6K9;n_GDnQL1
+Z57 !s105 mfsm_sv_unit
+S1
+R5
+Z58 w1660250948
+Z59 8K:/Lab 5 sample/mfsm.sv
+Z60 FK:/Lab 5 sample/mfsm.sv
+L0 13
+R9
+r1
+31
+Z61 !s90 -reportprogress|300|-work|work|-sv|K:/Lab 5 sample/mfsm.sv|
+R11
+!i10b 1
+!s85 0
+Z62 !s108 1660252549.827000
+Z63 !s107 K:/Lab 5 sample/mfsm.sv|
+!s101 -O0
+vsecgen
+R1
+!i10b 1
+Z64 !s100 ;idGj;9XWLIhL2S_n3TB]0
+Z65 IEPYCI<@[4j1SEi:n^@db22
+Z66 Vme=KVE9gG^mABWbGA698G1
+Z67 !s105 secgen_sv_unit
+S1
+R5
+Z68 w1660248028
+Z69 8K:/Lab 5 sample/secgen.sv
+Z70 FK:/Lab 5 sample/secgen.sv
+L0 13
+R9
+r1
+!s85 0
+31
+!s108 1660252549.927000
+!s107 K:/Lab 5 sample/secgen.sv|
+Z71 !s90 -reportprogress|300|-work|work|-sv|K:/Lab 5 sample/secgen.sv|
+!s101 -O0
+R11

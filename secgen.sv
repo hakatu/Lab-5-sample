@@ -18,7 +18,7 @@ module secgen (
 );
 
 ///////////////////////////////////////////////
-parameter CLKCONST = 50000000; //clock 50 MHz
+parameter CLKCONST = 500; //clock 50 MHz
 ///////////////////////////////////////////////
 
 reg [25:0] temp; // 26-bit 67M

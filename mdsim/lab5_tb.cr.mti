@@ -1,0 +1,50 @@
+{K:/Lab 5 sample/lab5.sv} {1 {vlog -work work -sv {K:/Lab 5 sample/lab5.sv}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module lab5
+
+Top level modules:
+	lab5
+
+} {} {}} {K:/Lab 5 sample/bcdcnv.sv} {1 {vlog -work work -sv {K:/Lab 5 sample/bcdcnv.sv}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module bcdcnv
+
+Top level modules:
+	bcdcnv
+
+} {} {}} {K:/Lab 5 sample/lab5_tb.sv} {1 {vlog -work work -sv {K:/Lab 5 sample/lab5_tb.sv}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module lab5_tb
+
+Top level modules:
+	lab5_tb
+
+} {} {}} {K:/Lab 5 sample/secgen.sv} {1 {vlog -work work -sv {K:/Lab 5 sample/secgen.sv}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module secgen
+
+Top level modules:
+	secgen
+
+} {} {}} {K:/Lab 5 sample/afsm.sv} {1 {vlog -work work -sv {K:/Lab 5 sample/afsm.sv}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module afsm
+
+Top level modules:
+	afsm
+
+} {} {}} {K:/Lab 5 sample/mfsm.sv} {1 {vlog -work work -sv {K:/Lab 5 sample/mfsm.sv}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module mfsm
+
+Top level modules:
+	mfsm
+
+} {} {}} {K:/Lab 5 sample/lcddisp.sv} {1 {vlog -work work -sv {K:/Lab 5 sample/lcddisp.sv}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module lcddisp
+
+Top level modules:
+	lcddisp
+
+} {} {}}
