@@ -7,9 +7,9 @@
 // Lab 5 : Thiet ke he thong den giao thong
 // Thuc hien giao tiep DE2 - GPIO - Breadboard - ICs/LEDs/LCDs
 // Wrapper cho IO
-//
-///////////////////////////////////////////////
+////////////////
 
+/////////////////////////////////
 module lab5wr (
     input CLOCK_50,
     input [0:0] KEY,
@@ -20,13 +20,18 @@ module lab5wr (
     output [7:0] LCD_DATA,
     output LCD_ON, LCD_BLON,
 
-    output [19:0] GPIO_0
+    output [19:0] GPIO_1,
+    output [19:0] GPIO_0,
+    output [6:0] HEX4,
+    output [6:0] HEX7,
+    output [5:0] LEDR
 );
 
 ///////////////////////////////////////////////
 
 assign LCD_ON = 1;
 assign LCD_BLON = 1;
+//assign GPIO0[0] = 1;
 
 lab5 ilab5(
     CLOCK_50,
@@ -37,11 +42,12 @@ lab5 ilab5(
     LCD_RS, LCD_RW, LCD_EN, // for LCDs
     LCD_DATA,
 
-    GPIO_0[0],GPIO_0[1],GPIO_0[2],// red green yellow 0 
-    GPIO_0[9:3], //hex 0
+    LEDR[0],LEDR[1],LEDR[2],// red green yellow 0 
+    HEX4, //hex 0
 
-    GPIO_0[10],GPIO_0[11],GPIO_0[12], // red green yellow 1
-    GPIO_0[19:13] //double hex 1
+	LEDR[3],LEDR[4],LEDR[5],// red green yellow 1
+    HEX7 //double hex 1
 );
+
 
 endmodule

@@ -57,7 +57,7 @@ always_ff @(posedge clk) begin
     state <= WAY1;
     else
         if(stateisway1)
-        state <= chr1half? CHR1 : WAY1;
+        state <= chr1half? WAY1 : CHR1;
         else if(stateischr1)
         state <= chr1done? WAY2 : CHR1;       
         else if(stateisway2)
@@ -84,7 +84,7 @@ end
 
 assign chr1done = cntdwn == 0;
 assign chr2done = chr1done;
-assign chr1half = cntdwn == 3;
+assign chr1half = cntdwn == 4;
 assign chr2half = chr1half;
 
 ////////////////////////////////////////////////

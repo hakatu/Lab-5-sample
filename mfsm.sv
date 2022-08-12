@@ -59,13 +59,13 @@ always_ff @(posedge clk) begin
     state <= chrtsw? WAY1 : WAY2;
     else
         if(stateisway1)
-        state <= (chrtsw&sec)? CHR1 : WAY1;
+        state <= chrtsw? WAY1 : CHR1;
         else if(stateischr1)
-        state <= (chr1done)? WAY2 : CHR1;       
+        state <= chr1done? WAY2 : CHR1;       
         else if(stateisway2)
-        state <= (!chrtsw&sec)? CHR2 : WAY2; 
+        state <= (!chrtsw)? CHR2 : WAY2; 
         else if(stateischr2)
-        state <= (chr2done&sec)? WAY1 : CHR2;
+        state <= chr2done? WAY1 : CHR2;
         else
         state <= state; 
 end
@@ -91,13 +91,13 @@ assign chr2done = chr1done;
 assign gled0 = stateisway1; //green lit when way1 is going
 assign rled0 = stateisway2 | stateischr2; //red lit when way2 is going or changing to way 1
 assign yled0 = stateischr1; //yellow lit when changing to way 2
-assign hex0n = (stateisway1 | stateisway2)? 4'd9 : cntdwn; // number 9 or 3 sec down
+assign hex0n = stateisway1? 4'd9 : cntdwn; // number 9 or 3 sec down
 
 //way 2
 assign gled1 = stateisway2; //green lit when way2 is going
 assign rled1 = stateisway1 | stateischr1; //red lit when way2 is going or changing to way 1
 assign yled1 = stateischr2; //yellow lit when changing to way 2
-assign hex1n = (stateisway1 | stateisway2)? 4'd9 : cntdwn; // number 9 or 3 sec down
+assign hex1n = stateisway2? 4'd9 : cntdwn; // number 9 or 3 sec down
 
 
 ////////////////////////////////////////////////

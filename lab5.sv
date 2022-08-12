@@ -19,10 +19,10 @@ module lab5 (
     output lcdrs, lcdrw, lcden, // for LCDs
     output [7:0] lcddata,
 
-    output rled0, gled0, yled0, // red green yellow 0 
+    output gled0, yled0, rled0, // red green yellow 0 
     output [6:0] hex0, //hex 0
 
-    output rled1, gled1, yled1, // red green yellow 1
+    output gled1, yled1, rled1, // red green yellow 1
     output [6:0] hex1 //double hex 1
 );
 
