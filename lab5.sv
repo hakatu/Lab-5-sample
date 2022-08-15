@@ -24,6 +24,7 @@ module lab5 (
 
     output rled1, gled1, yled1, // red green yellow 1
     output [6:0] hex1, //double hex 1
+    output [3:0] hex1nmo,
 
 	output sectest
 );
@@ -89,7 +90,10 @@ afsm iafsm (
 
 /////
 
-wire [3:0] hex0nm,hex1nm;
+wire [3:0] hex0nm;
+wire [3:0] hex1nm;
+
+assign hex1nmo = hex1nm;
 
 mfsm imfsm (
     clk,

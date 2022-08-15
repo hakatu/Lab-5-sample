@@ -87,8 +87,6 @@ always @(posedge clk) begin
     lcd_rs = 1;
     j = 5;
     end
-  else
-   lcd_rs = 1;
   //else if (j > 27) begin 
    // lcd_rs = 1;
   ///  j = 5;
