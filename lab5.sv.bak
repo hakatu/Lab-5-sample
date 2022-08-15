@@ -24,6 +24,8 @@ module lab5 (
 
     output rled1, gled1, yled1, // red green yellow 1
     output [6:0] hex1 //double hex 1
+
+	output sectest;
 );
 
 ///////////////////////////////////////////
@@ -113,5 +115,6 @@ bcdcnv ibcdcnv4 (hex1nm,hex1m);
 
 secgen isecgen (clk,rst,sec);
 
+assign sectest = sec;
 ///////////////////////////////////////////////
 endmodule

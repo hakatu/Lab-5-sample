@@ -51,7 +51,7 @@ hex1 //double hex 1
 initial begin
     rst = 1'b0;
     chrtsw = 1'b1;
-    masw = 1'b0;
+    masw = 1'b1;
     #100;
     rst = 1'b1;
     #100;

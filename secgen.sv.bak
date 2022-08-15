@@ -10,7 +10,7 @@
 //
 ///////////////////////////////////////////////
 
-module moduleName (
+module secgen (
     input clk,
     input rst,
 
